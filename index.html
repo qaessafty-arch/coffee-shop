@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ODOR — Premium Coffee</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&family=Dancing+Script:wght@400;700&family=Tajawal:wght@300;400;500;700&family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <!-- Link to the separate CSS file -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <!-- Social Sidebar -->
+    <div class="social-sidebar">
+        <a href="https://www.instagram.com/odor_coffe?stkn=MWozemgwbDg5MWVuMw==" class="social-icon" aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social-icon" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+    </div>
+
+    <!-- ─── NAVBAR ─── -->
+    <nav class="navbar">
+        <a href="#home" class="logo"><span class="icon-letter">O</span>DOR</a>
+        <ul class="nav-links">
+            <li><a href="#home" data-i18n="nav_home">Home</a></li>
+            <li><a href="#shop" data-i18n="nav_shop">Shop</a></li>
+            <li><a href="#blog" data-i18n="nav_blog">Blog</a></li>
+            <li><a href="#about" data-i18n="nav_about">About</a></li>
+            <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+        </ul>
+        <div class="nav-icons">
+            <div class="nav-icon"><i class="far fa-heart"></i></div>
+            <div class="nav-icon"><i class="fas fa-coffee"></i></div>
+
+            <!-- ─── LANGUAGE DROPDOWN ─── -->
+            <div class="lang-dropdown">
+                <button class="nav-icon lang-trigger" aria-label="Change language">
+                    <i class="fas fa-globe"></i>
+                </button>
+
+                <div class="lang-menu">
+                    <button class="lang-option active" data-lang="en">
+                        <span class="lang-flag">EN</span>
+                        <span class="lang-native en">English</span>
+                        <i class="fas fa-check lang-check"></i>
+                    </button>
+
+                    <button class="lang-option" data-lang="ar">
+                        <span class="lang-flag">AR</span>
+                        <span class="lang-native ar">العربية</span>
+                        <i class="fas fa-check lang-check"></i>
+                    </button>
+
+                    <button class="lang-option" data-lang="ku">
+                        <span class="lang-flag">KU</span>
+                        <span class="lang-native ku">کوردی</span>
+                        <i class="fas fa-check lang-check"></i>
+                    </button>
+                </div>
+            </div>
+
+            <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="content-wrapper" id="home">
+        <div class="main-content">
+            <div class="left-content">
+                <h1 class="headline" data-i18n-html="hero_title">Discover <br />the real taste of coffe with <span class="highlight">ODOR</span></h1>
+                <p class="sub-headline" data-i18n="hero_sub">Hand-picked single-origin beans, meticulously roasted and brewed.</p>
+                <p class="description" data-i18n-html="hero_desc">At ODOR, whether you're looking for a bold espresso or a smooth pour-over, we have it all.<br />Timeless roasting meets contemporary flavor — designed for those who dare to savor.</p>
+                <a href="#shop" class="cta-button" data-i18n="hero_cta">Explore Our Brews</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Split Section -->
+    <section class="split-section">
+        <div class="split-left">
+            <h2 data-i18n="split_title">From Bean to Cup</h2>
+            <p data-i18n="split_text">At ODOR, coffee is an art form. We hand-select exceptional beans and meticulously roast them in small batches to unlock a complex symphony of flavors. The result is a bold, astonishingly smooth brew with rich notes of dark chocolate and caramel—a moment of pure luxury in every sip.</p>
+        </div>
+        <div class="split-right">
+            <img src="image/coffe10.png" alt="Coffee Cups" />
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="video-section">
+        <div class="video-placeholder">
+            <img src="image/coffe10.png" alt="Coffee Video Placeholder" class="video-placeholder-img">
+            <div class="video-play-button">
+                <i class="fas fa-play"></i>
+            </div>
+        </div>
+        <div class="video-overlay"></div>
+        <div class="video-content">
+            <h2 data-i18n="video_title">The Craft Behind the Cup</h2>
+            <p data-i18n="video_sub">Watch the passion poured into every roast.</p>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="about-section" id="about">
+        <div class="about-image">
+            <img src="image/inside.jpg" alt="Our Story" />
+        </div>
+        <div class="about-text">
+            <h2 data-i18n="about_title">Our Story</h2>
+            <p data-i18n-html="about_text">Founded in the heart of the city of Erbil, ODOR was born from a simple passion: to bring the world's finest beans to your cup. We believe in fair trade, small-batch roasting, and the art of slowing down to enjoy the moment.<br><br>"Here in Erbil, where the ancient Citadel watches over our streets, we hold tight to one simple belief: 'Coffee is the language of connection.' We invite you to pause, take a seat, and let the rich aromas wash over you. After all, every cup we pour is a quiet conversation between old traditions and new dreams."</p>
+        </div>
+    </section>
+
+    <!-- ─── SHOP / MENU SECTION ─── -->
+    <section class="shop-section" id="shop">
+        <div class="shop-overlay"></div>
+        <div class="shop-content">
+            <div class="shop-header">
+                <h2 data-i18n="shop_title">Our Signature Brews</h2>
+                <p data-i18n="shop_sub">Handcrafted daily, made with love and the finest beans.</p>
+            </div>
+
+            <div class="shop-grid">
+                <div class="shop-card">
+                    <div class="shop-icon"><i class="fas fa-mug-hot"></i></div>
+                    <h3 data-i18n="drink_1_name">Velvet Latte</h3>
+                    <p data-i18n="drink_1_desc">Silky steamed milk layered over a rich, double shot of espresso.</p>
+                    <div class="price">$4.50</div>
+                    <a href="#" class="add-btn" data-i18n="add_to_cart">Add to Cart</a>
+                </div>
+
+                <div class="shop-card">
+                    <div class="shop-icon"><i class="fas fa-mug-hot"></i></div>
+                    <h3 data-i18n="drink_2_name">Midnight Espresso</h3>
+                    <p data-i18n="drink_2_desc">Bold, dark roast with notes of chocolate and a velvety crema.</p>
+                    <div class="price">$3.50</div>
+                    <a href="#" class="add-btn" data-i18n="add_to_cart">Add to Cart</a>
+                </div>
+
+                <div class="shop-card">
+                    <div class="shop-icon"><i class="fas fa-mug-hot"></i></div>
+                    <h3 data-i18n="drink_3_name">Golden Pour-Over</h3>
+                    <p data-i18n="drink_3_desc">Single-origin beans, slow-brewed for a clean, fruity finish.</p>
+                    <div class="price">$5.00</div>
+                    <a href="#" class="add-btn" data-i18n="add_to_cart">Add to Cart</a>
+                </div>
+
+                <div class="shop-card">
+                    <div class="shop-icon"><i class="fas fa-mug-hot"></i></div>
+                    <h3 data-i18n="drink_4_name">Caramel Macchiato</h3>
+                    <p data-i18n="drink_4_desc">Layers of vanilla, milk, espresso, and a sweet caramel drizzle.</p>
+                    <div class="price">$4.75</div>
+                    <a href="#" class="add-btn" data-i18n="add_to_cart">Add to Cart</a>
+                </div>
+
+                <div class="shop-card">
+                    <div class="shop-icon"><i class="fas fa-mug-hot"></i></div>
+                    <h3 data-i18n="drink_5_name">Iced Cold Brew</h3>
+                    <p data-i18n="drink_5_desc">Steeped for 18 hours, served over ice for a smooth, mellow kick.</p>
+                    <div class="price">$4.25</div>
+                    <a href="#" class="add-btn" data-i18n="add_to_cart">Add to Cart</a>
+                </div>
+
+                <div class="shop-card">
+                    <div class="shop-icon"><i class="fas fa-mug-hot"></i></div>
+                    <h3 data-i18n="drink_6_name">Hazelnut Cappuccino</h3>
+                    <p data-i18n="drink_6_desc">Rich espresso topped with a nutty, velvety foam and cocoa.</p>
+                    <div class="price">$4.90</div>
+                    <a href="#" class="add-btn" data-i18n="add_to_cart">Add to Cart</a>
+                </div>
+
+                <div class="shop-card">
+                    <div class="shop-icon"><i class="fas fa-mug-hot"></i></div>
+                    <h3 data-i18n="drink_7_name">Mocha Delight</h3>
+                    <p data-i18n="drink_7_desc">Espresso blended with rich chocolate and topped with cream.</p>
+                    <div class="price">$5.25</div>
+                    <a href="#" class="add-btn" data-i18n="add_to_cart">Add to Cart</a>
+                </div>
+
+                <div class="shop-card">
+                    <div class="shop-icon"><i class="fas fa-mug-hot"></i></div>
+                    <h3 data-i18n="drink_8_name">Vanilla Flat White</h3>
+                    <p data-i18n="drink_8_desc">Smooth micro-foam over a velvety shot of espresso with vanilla.</p>
+                    <div class="price">$4.60</div>
+                    <a href="#" class="add-btn" data-i18n="add_to_cart">Add to Cart</a>
+                </div>
+
+                <div class="shop-card">
+                    <div class="shop-icon"><i class="fas fa-mug-hot"></i></div>
+                    <h3 data-i18n="drink_9_name">Spiced Turkish Coffee</h3>
+                    <p data-i18n="drink_9_desc">Traditional brew with cardamom and a hint of cinnamon.</p>
+                    <div class="price">$4.00</div>
+                    <a href="#" class="add-btn" data-i18n="add_to_cart">Add to Cart</a>
+                </div>
+            </div>
+
+            <!-- ─── NON-COFFEE / DRINKS HEADER ─── -->
+            <div class="shop-header shop-header-sub">
+                <h2 data-i18n="shop_drinks_title">Non-Coffee / Drinks</h2>
+                <p data-i18n="shop_drinks_sub">Refreshing alternatives for those who want something different.</p>
+            </div>
+
+            <div class="shop-grid">
+                <div class="shop-card">
+                    <div class="shop-icon"><i class="fas fa-glass-water"></i></div>
+                    <h3 data-i18n="cold_1_name">Fresh Orange Juice</h3>
+                    <p data-i18n="cold_1_desc">Freshly squeezed oranges, served chilled with a hint of mint.</p>
+                    <div class="price">$3.75</div>
+                    <a href="#" class="add-btn" data-i18n="add_to_cart">Add to Cart</a>
+                </div>
+
+                <div class="shop-card">
+                    <div class="shop-icon"><i class="fas fa-wine-glass"></i></div>
+                    <h3 data-i18n="cold_2_name">Berry Lemonade</h3>
+                    <p data-i18n="cold_2_desc">A refreshing blend of mixed berries, lemon, and sparkling water.</p>
+                    <div class="price">$4.00</div>
+                    <a href="#" class="add-btn" data-i18n="add_to_cart">Add to Cart</a>
+                </div>
+
+                <div class="shop-card">
+                    <div class="shop-icon"><i class="fas fa-cocktail"></i></div>
+                    <h3 data-i18n="cold_3_name">Virgin Mojito</h3>
+                    <p data-i18n="cold_3_desc">Fresh mint, lime, and sparkling soda over crushed ice.</p>
+                    <div class="price">$4.25</div>
+                    <a href="#" class="add-btn" data-i18n="add_to_cart">Add to Cart</a>
+                </div>
+
+                <div class="shop-card">
+                    <div class="shop-icon"><i class="fas fa-mug-saucer"></i></div>
+                    <h3 data-i18n="cold_4_name">Odor Tea</h3>
+                    <p data-i18n="cold_4_desc">Hand-picked black tea leaves, gently steeped with aromatic spices and served warm.</p>
+                    <div class="price">$3.50</div>
+                    <a href="#" class="add-btn" data-i18n="add_to_cart">Add to Cart</a>
+                </div>
+
+                <div class="shop-card">
+                    <div class="shop-icon"><i class="fas fa-ice-cream"></i></div>
+                    <h3 data-i18n="cold_5_name">Strawberry Smoothie</h3>
+                    <p data-i18n="cold_5_desc">Fresh strawberries blended with milk and strawberry syrup over crushed ice.</p>
+                    <div class="price">$3.50</div>
+                    <a href="#" class="add-btn" data-i18n="add_to_cart">Add to Cart</a>
+                </div>
+
+                <div class="shop-card">
+                    <div class="shop-icon"><i class="fas fa-ice-cream"></i></div>
+                    <h3 data-i18n="cold_6_name">Banana Smoothie</h3>
+                    <p data-i18n="cold_6_desc">Fresh bananas blended with milk and honey over crushed ice.</p>
+                    <div class="price">$2.50</div>
+                    <a href="#" class="add-btn" data-i18n="add_to_cart">Add to Cart</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── BLOG VIDEO SLIDE ─── -->
+    <div class="blog-slide active">
+        <div class="blog-video">
+            <video autoplay muted loop playsinline>
+                <source src="image/IMG_0633.MP4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+
+    <!-- ─── PARALLAX IMAGE SLIDER (Shop Photos) ─── -->
+    <section class="parallax-gallery">
+        <div class="parallax-panel">
+            <img src="image/walls.jpg" alt="ODOR Coffee Shop 1">
+            <div class="parallax-overlay">
+                <h3>Our Space</h3>
+                <p>Where warmth meets craft.</p>
+            </div>
+        </div>
+
+        <div class="parallax-panel">
+            <img src="image/beans.png" alt="ODOR Coffee Shop 2">
+            <div class="parallax-overlay">
+                <h3>The Atmosphere</h3>
+                <p>Designed for slow moments.</p>
+            </div>
+        </div>
+
+        <div class="parallax-panel">
+            <img src="image/bag.jpg" alt="ODOR Coffee Shop 3">
+            <div class="parallax-overlay">
+                <h3>The Experience</h3>
+                <p>Every detail crafted with love.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── BLOG / NEWS PAGE (Slider) ─── -->
+    <section class="blog-section" id="blog">
+        <div class="blog-header">
+            <h2 data-i18n="blog_title">What's Happening at ODOR</h2>
+            <p data-i18n="blog_sub">News, offers, and our opening hours.</p>
+        </div>
+
+        <div class="blog-slider">
+            <div class="blog-slide active">
+                <div class="blog-text">
+                    <i class="fas fa-newspaper"></i>
+                    <h3 data-i18n="blog_news_title">Latest News</h3>
+                    <p data-i18n="blog_news_text">We are thrilled to unveil our hand-crafted new winter menu, carefully created to bring you warmth and comfort as the season cools down. Highlighting our new offerings are the rich, aromatic Spiced Turkish Coffee—infused with subtle cardamom and cinnamon notes—and our silky Caramel Macchiato, brewed with freshly roasted espresso and house-made vanilla syrup. Whether you need a cozy morning pick-me-up or a place to unwind with friends, come visit our Erbil location this week and experience your new favorite winter brew!</p>
+                    <span class="blog-date" data-i18n="blog_news_date">Available Now in The menu</span>
+                </div>
+                <div class="blog-image">
+                    <img src="image/IMG_0634.JPG" alt="Latest News">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── DISCOUNT / OFFER SECTION ─── -->
+    <section class="blog-section discount-section">
+        <div class="blog-header">
+            <h2 data-i18n="disc_title">Limited Time Offer</h2>
+            <p data-i18n="disc_sub">Grab your favorite brew before the timer runs out.</p>
+        </div>
+
+        <div class="blog-slider">
+            <div class="blog-slide active">
+                <div class="blog-text">
+                    <i class="fas fa-tag"></i>
+                    <h3 data-i18n="disc_offer_title">20% OFF All Signature Brews</h3>
+                    <p data-i18n="disc_offer_text">For a limited time, enjoy 20% off every handcrafted coffee on our menu. Whether you crave a Velvet Latte or a bold Midnight Espresso, now is the perfect moment to indulge. Visit us in Erbil and treat yourself — this offer won't last long.</p>
+
+                    <div class="discount-timer" id="discountTimer">
+                        <div class="timer-block"><span class="timer-number" id="days">00</span><span class="timer-label" data-i18n="timer_days">Days</span></div>
+                        <div class="timer-block"><span class="timer-number" id="hours">00</span><span class="timer-label" data-i18n="timer_hours">Hours</span></div>
+                        <div class="timer-block"><span class="timer-number" id="minutes">00</span><span class="timer-label" data-i18n="timer_minutes">Minutes</span></div>
+                        <div class="timer-block"><span class="timer-number" id="seconds">00</span><span class="timer-label" data-i18n="timer_seconds">Seconds</span></div>
+                    </div>
+
+                    <span class="blog-date" data-i18n="disc_date">Offer ends soon — don't miss out!</span>
+                </div>
+
+                <div class="blog-image">
+                    <div class="slider-wrapper">
+                        <button class="slider-arrow slider-prev" aria-label="Previous">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+
+                        <div class="image-slider">
+                            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80" alt="Offer 1" class="slider-img active">
+                            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800&q=80" alt="Offer 2" class="slider-img">
+                            <img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=800&q=80" alt="Offer 3" class="slider-img">
+                            <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=800&q=80" alt="Offer 4" class="slider-img">
+
+                            <div class="slider-dots">
+                                <span class="dot active" data-index="0"></span>
+                                <span class="dot" data-index="1"></span>
+                                <span class="dot" data-index="2"></span>
+                                <span class="dot" data-index="3"></span>
+                            </div>
+                        </div>
+
+                        <button class="slider-arrow slider-next" aria-label="Next">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── PARALLAX SECTION ─── -->
+    <section class="plx-wrapper">
+        <div class="plx-sticky">
+
+            <!-- Background -->
+            <div class="plx-bg">
+                <img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?q=80&w=1061&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D.png" alt="Background">
+            </div>
+            <div class="plx-vignette"></div>
+
+            <!-- Carousel items -->
+            <div class="plx-item pos-left">
+                <img src="https://plus.unsplash.com/premium_photo-1726866198964-84c38f1e98c9?q=80&w=721&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Left">
+                <span class="plx-frame-tag">Erbil · Est. 2024</span>
+            </div>
+            <div class="plx-item pos-center">
+                <img src="https://images.unsplash.com/photo-1647919234609-3acf20be65fc?q=80&w=686&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D.png" alt="Center">
+                <span class="plx-frame-tag">Erbil · Est. 2024</span>
+            </div>
+            <div class="plx-item pos-right">
+                <img src="image/bag.jpg" alt="Right">
+                <span class="plx-frame-tag">Erbil · Est. 2024</span>
+            </div>
+
+            <!-- Arrows -->
+            <button class="plx-arrow plx-arrow-left" aria-label="Previous image">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="plx-arrow plx-arrow-right" aria-label="Next image">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+
+            <!-- Text -->
+            <div class="plx-content">
+                <h1 class="plx-title" data-i18n="plx_title">ODOR</h1>
+                <p class="plx-tagline" data-i18n="plx_tagline">Crafted slowly · Savored fully</p>
+            </div>
+
+            <!-- Scroll hint -->
+            <div class="plx-scroll-hint">
+                <span data-i18n="plx_scroll">Scroll</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ─── CONTACT / LOCATION SECTION ─── -->
+    <section class="contact-section" id="contact">
+        <div class="contact-header">
+            <h2 data-i18n="contact_title">Find Us</h2>
+            <p data-i18n="contact_sub">Come for the coffee, stay for the atmosphere.</p>
+        </div>
+
+        <div class="contact-grid">
+
+            <!-- Map (left side) -->
+            <div class="contact-map">
+                <iframe
+                    src="https://www.google.com/maps?q=Odor+Coffee+Erbil&output=embed"
+                    width="100%"
+                    height="100%"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Odor Coffee Location">
+                </iframe>
+            </div>
+
+            <!-- Contact details (right side) -->
+            <div class="contact-info">
+
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <h3 data-i18n="contact_address">Address</h3>
+                        <p>6X3R+WHC, Supermarket St<br>Erbil, Iraq</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <h3 data-i18n="contact_hours">Opening Hours</h3>
+                        <p data-i18n="contact_hours_text">Daily: 8:00 AM – 2:00 AM</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <div>
+                        <h3 data-i18n="contact_phone">Phone</h3>
+                        <p><a href="tel:+9647511559191">+964 751 155 9191</a></p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <i class="fab fa-whatsapp"></i>
+                    <div>
+                        <h3 data-i18n="contact_whatsapp">WhatsApp</h3>
+                        <p><a href="https://wa.me/9647511559191" target="_blank" data-i18n="contact_wa_text">Message us for orders</a></p>
+                    </div>
+                </div>
+
+                <a href="https://www.google.com/maps/dir/?api=1&destination=Odor+Coffee+Erbil" target="_blank" class="contact-directions">
+                    <i class="fas fa-directions"></i> <span data-i18n="contact_directions">Get Directions</span>
+                </a>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ─── FOOTER ─── -->
+    <footer class="site-footer">
+        <div class="footer-glow"></div>
+
+        <div class="footer-inner">
+
+            <!-- Column 1 · Brand -->
+            <div class="footer-col footer-brand">
+                <a href="#home" class="footer-logo"><span class="icon-letter">O</span>DOR</a>
+                <p class="footer-tagline" data-i18n="foot_tagline">Crafted slowly. Savored fully.</p>
+                <p class="footer-blurb" data-i18n="foot_blurb">
+                    Erbil's home for specialty coffee, hand-picked beans, and moments worth pausing for.
+                </p>
+
+                <div class="footer-social">
+                    <a href="https://www.instagram.com/odor_coffe" target="_blank" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" aria-label="TikTok">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Column 2 · Quick Links -->
+            <div class="footer-col">
+                <h4 data-i18n="foot_explore">Explore</h4>
+                <ul class="footer-links">
+                    <li><a href="#home" data-i18n="nav_home">Home</a></li>
+                    <li><a href="#shop" data-i18n="nav_shop">Shop</a></li>
+                    <li><a href="#blog" data-i18n="nav_blog">Blog</a></li>
+                    <li><a href="#about" data-i18n="nav_about">About</a></li>
+                    <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3 · Visit Us -->
+            <div class="footer-col">
+                <h4 data-i18n="foot_visit">Visit Us</h4>
+                <ul class="footer-info">
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>6X3R+WHC, Supermarket St<br>Erbil, Iraq</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-clock"></i>
+                        <span data-i18n="contact_hours_text">Daily: 8:00 AM – 2:00 AM</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-phone-alt"></i>
+                        <a href="tel:+9647511559191">+964 751 155 9191</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Column 4 · Newsletter -->
+            <div class="footer-col">
+                <h4 data-i18n="foot_news">Stay in the Loop</h4>
+                <p class="footer-news-text" data-i18n="foot_news_text">
+                    New brews, secret offers, and café events — straight to your inbox.
+                </p>
+                <form class="footer-news" onsubmit="event.preventDefault(); this.querySelector('.footer-news-btn').textContent = '✓';">
+                    <input type="email" placeholder="Your email" data-i18n-placeholder="foot_news_placeholder" required />
+                    <button type="submit" class="footer-news-btn" aria-label="Subscribe">
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </form>
+            </div>
+
+        </div>
+
+        <!-- Bottom bar -->
+        <div class="footer-bottom">
+            <p data-i18n="foot_copyright">© 2025 ODOR Coffee · All rights reserved.</p>
+            <p class="footer-credit" data-i18n-html="foot_credit">Crafted with <i class="fas fa-heart"></i> in Erbil</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- ─── SCRIPTS ─── -->
+    <script src="javascript.js"></script>
+
+    <script>
+
+        
+        // ─── COUNTDOWN TIMER ───
+        (function() {
+            const offerEndDate = new Date('2026-12-31T23:59:59').getTime();
+
+            function updateTimer() {
+                const distance = offerEndDate - new Date().getTime();
+
+                if (distance < 0) {
+                    document.getElementById('days').textContent = '00';
+                    document.getElementById('hours').textContent = '00';
+                    document.getElementById('minutes').textContent = '00';
+                    document.getElementById('seconds').textContent = '00';
+                    return;
+                }
+
+                document.getElementById('days').textContent = String(Math.floor(distance / (1000 * 60 * 60 * 24))).padStart(2, '0');
+                document.getElementById('hours').textContent = String(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
+                document.getElementById('minutes').textContent = String(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
+                document.getElementById('seconds').textContent = String(Math.floor((distance % (1000 * 60)) / 1000)).padStart(2, '0');
+            }
+
+            updateTimer();
+            setInterval(updateTimer, 1000);
+        })();
+
+        // ─── IMAGE SLIDER ───
+        (function() {
+            const section = document.querySelector('.discount-section');
+            if (!section) return;
+
+            const images = section.querySelectorAll('.slider-img');
+            const dots = section.querySelectorAll('.slider-dots .dot');
+            const nextBtn = section.querySelector('.slider-next');
+            const prevBtn = section.querySelector('.slider-prev');
+
+            if (!images.length || !nextBtn || !prevBtn) return;
+
+            let current = 0;
+            let autoplay;
+
+            function showSlide(index) {
+                images.forEach((img, i) => img.classList.toggle('active', i === index));
+                dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
+                current = index;
+            }
+
+            function nextSlide() { showSlide((current + 1) % images.length); }
+            function prevSlide() { showSlide((current - 1 + images.length) % images.length); }
+
+            nextBtn.addEventListener('click', () => { nextSlide(); resetAutoplay(); });
+            prevBtn.addEventListener('click', () => { prevSlide(); resetAutoplay(); });
+
+            dots.forEach(dot => {
+                dot.addEventListener('click', () => {
+                    showSlide(Number(dot.dataset.index));
+                    resetAutoplay();
+                });
+            });
+
+            function startAutoplay() { autoplay = setInterval(nextSlide, 4000); }
+            function resetAutoplay() { clearInterval(autoplay); startAutoplay(); }
+
+            startAutoplay();
+        })();
+
+        // ─── NAVBAR SCROLL EFFECT ───
+        (function() {
+            const nav = document.querySelector('.navbar');
+            if (!nav) return;
+            window.addEventListener('scroll', () => {
+                nav.classList.toggle('scrolled', window.scrollY > 50);
+            });
+        })();
+
+        // ─── BACK TO TOP ───
+        (function() {
+            const backBtn = document.querySelector('.back-to-top');
+            if (!backBtn) return;
+
+            window.addEventListener('scroll', () => {
+                backBtn.classList.toggle('visible', window.scrollY > 500);
+            });
+
+            backBtn.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        })();
+
+        // ─── SCROLL REVEAL ANIMATIONS ───
+        (function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    } else {
+                        entry.target.classList.remove('active');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.reveal-left, .reveal-right').forEach(el => {
+                observer.observe(el);
+            });
+        })();
+
+        // ─── MOBILE MENU TOGGLE ───
+        (function() {
+            const btn = document.querySelector('.mobile-menu-btn');
+            const links = document.querySelector('.nav-links');
+
+            if (!btn || !links) return;
+
+            btn.addEventListener('click', () => {
+                const isOpen = links.classList.toggle('open');
+                document.body.classList.toggle('menu-open', isOpen);
+                btn.textContent = isOpen ? '✕' : '☰';
+            });
+
+            links.querySelectorAll('a').forEach(a => {
+                a.addEventListener('click', () => {
+                    links.classList.remove('open');
+                    document.body.classList.remove('menu-open');
+                    btn.textContent = '☰';
+                });
+            });
+
+            document.addEventListener('click', (e) => {
+                if (window.innerWidth > 768) return;
+                if (!links.classList.contains('open')) return;
+                if (links.contains(e.target) || btn.contains(e.target)) return;
+                links.classList.remove('open');
+                document.body.classList.remove('menu-open');
+                btn.textContent = '☰';
+            });
+        })();
+
+        // ─── LANGUAGE SYSTEM (EN / AR / KU) ───
+        const TRANSLATIONS = {
+            en: {
+                nav_home: "Home", nav_shop: "Shop", nav_blog: "Blog", nav_about: "About", nav_contact: "Contact",
+                hero_title: 'Discover <br />the real taste of coffe with <span class="highlight">ODOR</span>',
+                hero_sub: "Hand-picked single-origin beans, meticulously roasted and brewed.",
+                hero_desc: "At ODOR, whether you're looking for a bold espresso or a smooth pour-over, we have it all.<br />Timeless roasting meets contemporary flavor — designed for those who dare to savor.",
+                hero_cta: "Explore Our Brews",
+                split_title: "From Bean to Cup",
+                split_text: "At ODOR, coffee is an art form. We hand-select exceptional beans and meticulously roast them in small batches to unlock a complex symphony of flavors. The result is a bold, astonishingly smooth brew with rich notes of dark chocolate and caramel—a moment of pure luxury in every sip.",
+                video_title: "The Craft Behind the Cup",
+                video_sub: "Watch the passion poured into every roast.",
+                about_title: "Our Story",
+                about_text: 'Founded in the heart of the city of Erbil, ODOR was born from a simple passion: to bring the world\'s finest beans to your cup. We believe in fair trade, small-batch roasting, and the art of slowing down to enjoy the moment.<br><br>"Here in Erbil, where the ancient Citadel watches over our streets, we hold tight to one simple belief: \'Coffee is the language of connection.\' We invite you to pause, take a seat, and let the rich aromas wash over you. After all, every cup we pour is a quiet conversation between old traditions and new dreams."',
+                shop_title: "Our Signature Brews",
+                shop_sub: "Handcrafted daily, made with love and the finest beans.",
+                shop_drinks_title: "Non-Coffee / Drinks",
+                shop_drinks_sub: "Refreshing alternatives for those who want something different.",
+                add_to_cart: "Add to Cart",
+                drink_1_name: "Velvet Latte", drink_1_desc: "Silky steamed milk layered over a rich, double shot of espresso.",
+                drink_2_name: "Midnight Espresso", drink_2_desc: "Bold, dark roast with notes of chocolate and a velvety crema.",
+                drink_3_name: "Golden Pour-Over", drink_3_desc: "Single-origin beans, slow-brewed for a clean, fruity finish.",
+                drink_4_name: "Caramel Macchiato", drink_4_desc: "Layers of vanilla, milk, espresso, and a sweet caramel drizzle.",
+                drink_5_name: "Iced Cold Brew", drink_5_desc: "Steeped for 18 hours, served over ice for a smooth, mellow kick.",
+                drink_6_name: "Hazelnut Cappuccino", drink_6_desc: "Rich espresso topped with a nutty, velvety foam and cocoa.",
+                drink_7_name: "Mocha Delight", drink_7_desc: "Espresso blended with rich chocolate and topped with cream.",
+                drink_8_name: "Vanilla Flat White", drink_8_desc: "Smooth micro-foam over a velvety shot of espresso with vanilla.",
+                drink_9_name: "Spiced Turkish Coffee", drink_9_desc: "Traditional brew with cardamom and a hint of cinnamon.",
+                cold_1_name: "Fresh Orange Juice", cold_1_desc: "Freshly squeezed oranges, served chilled with a hint of mint.",
+                cold_2_name: "Berry Lemonade", cold_2_desc: "A refreshing blend of mixed berries, lemon, and sparkling water.",
+                cold_3_name: "Virgin Mojito", cold_3_desc: "Fresh mint, lime, and sparkling soda over crushed ice.",
+                cold_4_name: "Odor Tea", cold_4_desc: "Hand-picked black tea leaves, gently steeped with aromatic spices and served warm.",
+                cold_5_name: "Strawberry Smoothie", cold_5_desc: "Fresh strawberries blended with milk and strawberry syrup over crushed ice.",
+                cold_6_name: "Banana Smoothie", cold_6_desc: "Fresh bananas blended with milk and honey over crushed ice.",
+                plx_title: "ODOR", plx_tagline: "Crafted slowly · Savored fully", plx_scroll: "Scroll",
+                blog_title: "What's Happening at ODOR", blog_sub: "News, offers, and our opening hours.",
+                blog_news_title: "Latest News",
+                blog_news_text: "We are thrilled to unveil our hand-crafted new winter menu, carefully created to bring you warmth and comfort as the season cools down. Highlighting our new offerings are the rich, aromatic Spiced Turkish Coffee—infused with subtle cardamom and cinnamon notes—and our silky Caramel Macchiato, brewed with freshly roasted espresso and house-made vanilla syrup. Whether you need a cozy morning pick-me-up or a place to unwind with friends, come visit our Erbil location this week and experience your new favorite winter brew!",
+                blog_news_date: "Available Now in The menu",
+                disc_title: "Limited Time Offer", disc_sub: "Grab your favorite brew before the timer runs out.",
+                disc_offer_title: "20% OFF All Signature Brews",
+                disc_offer_text: "For a limited time, enjoy 20% off every handcrafted coffee on our menu. Whether you crave a Velvet Latte or a bold Midnight Espresso, now is the perfect moment to indulge. Visit us in Erbil and treat yourself — this offer won't last long.",
+                disc_date: "Offer ends soon — don't miss out!",
+                timer_days: "Days", timer_hours: "Hours", timer_minutes: "Minutes", timer_seconds: "Seconds",
+                contact_title: "Find Us", contact_sub: "Come for the coffee, stay for the atmosphere.",
+                contact_address: "Address", contact_hours: "Opening Hours", contact_phone: "Phone", contact_whatsapp: "WhatsApp",
+                contact_directions: "Get Directions",
+                contact_hours_text: "Daily: 8:00 AM – 2:00 AM",
+                contact_wa_text: "Message us for orders",
+                foot_tagline: "Crafted slowly. Savored fully.",
+                foot_blurb: "Erbil's home for specialty coffee, hand-picked beans, and moments worth pausing for.",
+                foot_explore: "Explore", foot_visit: "Visit Us", foot_news: "Stay in the Loop",
+                foot_news_text: "New brews, secret offers, and café events — straight to your inbox.",
+                foot_news_placeholder: "Your email",
+                foot_copyright: "© 2025 ODOR Coffee · All rights reserved.",
+                foot_credit: 'Crafted with <i class="fas fa-heart"></i> in Erbil'
+            },
+            ar: {
+                nav_home: "الرئيسية", nav_shop: "المتجر", nav_blog: "المدونة", nav_about: "من نحن", nav_contact: "اتصل بنا",
+                hero_title: 'اكتشف <br />الطعم الحقيقي للقهوة مع <span class="highlight">ODOR</span>',
+                hero_sub: "حبوب مختارة يدويًا من أصل واحد، محمّصة ومُخمّرة بعناية فائقة.",
+                hero_desc: "في ODOR، سواء كنت تبحث عن إسبريسو قوي أو قهوة مقطرة ناعمة، لدينا كل ما تحتاجه.<br />تحميص خالد يلتقي بالنكهة العصرية — مصمم لأولئك الذين يجرؤون على التذوق.",
+                hero_cta: "استكشف مشروباتنا",
+                split_title: "من الحبة إلى الفنجان",
+                split_text: "في ODOR، القهوة هي فن. نختار حبوبًا استثنائية بعناية ونحمصها على دفعات صغيرة لإطلاق سيمفونية معقدة من النكهات. النتيجة هي مشروب جريء وناعم بشكل مذهل مع نوتات غنية من الشوكولاتة الداكنة والكراميل — لحظة من الرفاهية الخالصة في كل رشفة.",
+                video_title: "الحرفة خلف الفنجان",
+                video_sub: "شاهد الشغف المسكوب في كل تحميص.",
+                about_title: "قصتنا",
+                about_text: 'تأسست ODOR في قلب مدينة أربيل، وُلدت من شغف بسيط: جلب أجود الحبوب في العالم إلى فنجانك. نؤمن بالتجارة العادلة، والتحميص على دفعات صغيرة، وفن التمهل للاستمتاع باللحظة.<br><br>"هنا في أربيل، حيث تحرس القلعة القديمة شوارعنا، نتمسك بإيمان واحد بسيط: \'القهوة هي لغة التواصل.\' ندعوك للتوقف، والجلوس، وترك الروائح الغنية تغمرك. ففي النهاية، كل فنجان نسكبه هو محادثة هادئة بين التقاليد القديمة والأحلام الجديدة."',
+                shop_title: "مشروباتنا المميزة",
+                shop_sub: "مصنوعة يدويًا يوميًا، بحب وأجود الحبوب.",
+                shop_drinks_title: "مشروبات أخرى",
+                shop_drinks_sub: "بدائل منعشة لمن يريد شيئًا مختلفًا.",
+                add_to_cart: "أضف إلى السلة",
+                drink_1_name: "لاتيه مخملي", drink_1_desc: "حليب مبخّر حريري فوق جرعة مزدوجة غنية من الإسبريسو.",
+                drink_2_name: "إسبريسو منتصف الليل", drink_2_desc: "تحميص داكن جريء مع نوتات الشوكولاتة وكريما مخملية.",
+                drink_3_name: "بور أوفر ذهبي", drink_3_desc: "حبوب من أصل واحد، مخمّرة ببطء لنهاية نظيفة وفاكهية.",
+                drink_4_name: "كراميل ماكياتو", drink_4_desc: "طبقات من الفانيليا والحليب والإسبريسو مع رذاذ الكراميل الحلو.",
+                drink_5_name: "كولد برو مثلج", drink_5_desc: "منقوع لمدة 18 ساعة، يقدم على الثلج لنكهة ناعمة ولطيفة.",
+                drink_6_name: "كابتشينو البندق", drink_6_desc: "إسبريسو غني مع رغوة مخملية بنكهة البندق والكاكاو.",
+                drink_7_name: "موكا دي لايت", drink_7_desc: "إسبريسو ممزوج بالشوكولاتة الغنية ومزين بالكريمة.",
+                drink_8_name: "فلات وايت بالفانيليا", drink_8_desc: "رغوة ناعمة فوق جرعة إسبريسو مخملية مع الفانيليا.",
+                drink_9_name: "قهوة تركية بالتوابل", drink_9_desc: "تحضير تقليدي مع الهيل ولمسة من القرفة.",
+                cold_1_name: "عصير برتقال طازج", cold_1_desc: "برتقال معصور طازجًا، يقدم مبردًا مع لمسة من النعناع.",
+                cold_2_name: "ليموناضة التوت", cold_2_desc: "مزيج منعش من التوت المختلط والليمون والماء الفوار.",
+                cold_3_name: "موهيتو بدون كحول", cold_3_desc: "نعناع طازج، ليمون، وصودا فوارة على الثلج المجروش.",
+                cold_4_name: "شاي ODOR", cold_4_desc: "أوراق شاي أسود مختارة يدويًا، منقوعة بلطف مع توابل عطرية وتقدم دافئة.",
+                cold_5_name: "سموذي الفراولة", cold_5_desc: "فراولة طازجة ممزوجة مع الحليب وشراب الفراولة على الثلج المجروش.",
+                cold_6_name: "سموذي الموز", cold_6_desc: "موز طازج ممزوج مع الحليب والعسل على الثلج المجروش.",
+                plx_title: "ODOR", plx_tagline: "مصنوع ببطء · مُتذوق بالكامل", plx_scroll: "اسحب للأسفل",
+                blog_title: "ما يحدث في ODOR", blog_sub: "أخبار وعروض وساعات العمل.",
+                blog_news_title: "آخر الأخبار",
+                blog_news_text: "يسعدنا الكشف عن قائمة الشتاء الجديدة المصنوعة يدويًا، والمصممة بعناية لتجلب لك الدفء والراحة مع برودة الموسم. من أبرز عروضنا الجديدة القهوة التركية بالتوابل الغنية والعطرية — المنقوعة بنوتات الهيل والقرفة — والكراميل ماكياتو الحريري، المحضر بإسبريسو محمص طازج وشراب الفانيليا المنزلي. سواء كنت بحاجة إلى دفعة صباحية دافئة أو مكان للاسترخاء مع الأصدقاء، قم بزيارة موقعنا في أربيل هذا الأسبوع وجرب مشروبك الشتوي المفضل الجديد!",
+                blog_news_date: "متوفر الآن في القائمة",
+                disc_title: "عرض لفترة محدودة", disc_sub: "احصل على مشروبك المفضل قبل انتهاء الوقت.",
+                disc_offer_title: "خصم 20% على جميع المشروبات المميزة",
+                disc_offer_text: "لفترة محدودة، استمتع بخصم 20% على كل قهوة مصنوعة يدويًا في قائمتنا. سواء كنت تتوق إلى لاتيه مخملي أو إسبريسو منتصف الليل الجريء، الآن هو الوقت المثالي للاستمتاع. قم بزيارتنا في أربيل ودلل نفسك — هذا العرض لن يدوم طويلاً.",
+                disc_date: "ينتهي العرض قريبًا — لا تفوته!",
+                timer_days: "أيام", timer_hours: "ساعات", timer_minutes: "دقائق", timer_seconds: "ثواني",
+                contact_title: "زورونا", contact_sub: "تعال من أجل القهوة، وابقَ من أجل الجو.",
+                contact_address: "العنوان", contact_hours: "ساعات العمل", contact_phone: "الهاتف", contact_whatsapp: "واتساب",
+                contact_directions: "احصل على الاتجاهات",
+                contact_hours_text: "يوميًا: 8:00 صباحًا – 2:00 صباحًا",
+                contact_wa_text: "راسلنا للطلبات",
+                foot_tagline: "مصنوع ببطء. مُتذوق بالكامل.",
+                foot_blurb: "بيت أربيل للقهوة المتخصصة، والحبوب المختارة يدويًا، واللحظات التي تستحق التوقف.",
+                foot_explore: "استكشف", foot_visit: "زورونا", foot_news: "ابقَ على اطلاع",
+                foot_news_text: "مشروبات جديدة، عروض سرية، وفعاليات المقهى — مباشرة إلى بريدك.",
+                foot_news_placeholder: "بريدك الإلكتروني",
+                foot_copyright: "© 2025 ODOR Coffee · جميع الحقوق محفوظة.",
+                foot_credit: 'صُنع بـ <i class="fas fa-heart"></i> في أربيل'
+            },
+            ku: {
+                nav_home: "سەرەکی", nav_shop: "فرۆشگا", nav_blog: "بلۆگ", nav_about: "دەربارەی ئێمە", nav_contact: "پەیوەندی",
+                hero_title: 'تامە ڕاستەقینەکەی قاوە <br />بدۆزەرەوە لەگەڵ <span class="highlight">ODOR</span>',
+                hero_sub: "دانەکانی هەڵبژێردراوی دەستکرد لە سەرچاوەیەک، بە وردی برژاو و ئامادەکراو.",
+                hero_desc: "لە ODOR، ئەگەر بەدوای ئیسپرێسۆی بەهێز یان قاوەی نەرمدا بگەڕێی، هەموویمان هەیە.<br />برژاندنی هەمیشەیی لەگەڵ تامی هاوچەرخ — بۆ ئەوانەی کە دەوێرن تام بکەن.",
+                hero_cta: "خواردنەوەکانمان ببینە",
+                split_title: "لە دانەوە بۆ پەرداخ",
+                split_text: "لە ODOR، قاوە هونەرە. دانەکانی نایاب بە وردی هەڵدەبژێرین و بە بچووکیان دەبرژێنین بۆ کردنەوەی سیمفۆنییەکی ئاڵۆزی تامەکان. ئەنجامەکە خواردنەوەیەکی بەهێز و نەرمە بە تامی چاکۆلێتی تاریک و کارامێل — ساتێک لە خۆشی خالص لە هەر قومێکدا.",
+                video_title: "پیشەسازی لە پشت پەرداخ",
+                video_sub: "گەرمی دڵسۆزی ببینە کە دەڕژێتە ناو هەر برژاندنێک.",
+                about_title: "چیرۆکەکەمان",
+                about_text: 'ODOR لە دڵی شاری هەولێر دامەزراوە، لە خولیایەکی سادەوە لەدایکبووە: هێنانی باشترین دانەکانی جیهان بۆ پەرداخەکەت. باوەڕمان بە بازرگانی دادپەروەرانە، برژاندنی بچووک، و هونەری هێواشبوونەوە بۆ چێژوەرگرتن لە ساتەکە هەیە.<br><br>"لێرە لە هەولێر، کە قەڵای کۆن چاودێری شەقامەکانمان دەکات، بە یەک باوەڕی سادەوە دەچەسپێین: \'قاوە زمانی پەیوەندییە.\' بانگتان دەکەین کە بوەستن، دانیشن، و ڕێگە بدەن بۆنە خۆشەکان بتانگرێت. لە کۆتاییدا، هەر پەرداخێک کە دەیڕژێنین گفتوگۆیەکی هێواشە لە نێوان نەریتە کۆنەکان و خەونە نوێیەکان."',
+                shop_title: "خواردنەوە تایبەتەکانمان",
+                shop_sub: "ڕۆژانە بە دەست دروستکراو، بە خۆشەویستی و باشترین دانەکان.",
+                shop_drinks_title: "خواردنەوەی تر",
+                shop_drinks_sub: "هەڵبژاردەی نوێژەر بۆ ئەوانەی شتێکی جیاواز دەوێن.",
+                add_to_cart: "زیادکردن بۆ سەبەتە",
+                drink_1_name: "لاتی مەخمەلی", drink_1_desc: "شیرێکی هەڵمکراوی ئاوریشمی لەسەر ئیسپرێسۆی دووانەی دەوڵەمەند.",
+                drink_2_name: "ئیسپرێسۆی نیوەشەو", drink_2_desc: "برژاندنی تاریکی بەهێز لەگەڵ تامی چاکۆلێت و کرێمای مەخمەلی.",
+                drink_3_name: "پۆر-ئۆڤەری زێڕین", drink_3_desc: "دانەی سەرچاوەیەک، بە هێواشی ئامادەکراو بۆ کۆتاییەکی پاک و میوەیی.",
+                drink_4_name: "کارامێل ماکیاتۆ", drink_4_desc: "چینەکانی ڤانیلا، شیر، ئیسپرێسۆ، و ڕژاوی کارامێلی شیرین.",
+                drink_5_name: "کۆڵد بریوی سەهۆڵبەستراو", drink_5_desc: "بۆ 18 کاتژمێر تێکەڵکراو، لەسەر سەهۆڵ پێشکەشکراو بۆ تامێکی نەرم.",
+                drink_6_name: "کاپوچینۆی فندق", drink_6_desc: "ئیسپرێسۆی دەوڵەمەند لەگەڵ کەفی مەخمەلی فندق و کاکاو.",
+                drink_7_name: "مۆکا دێلایت", drink_7_desc: "ئیسپرێسۆ تێکەڵکراو لەگەڵ چاکۆلێتی دەوڵەمەند و کرێم لەسەرەوە.",
+                drink_8_name: "فلات وایتی ڤانیلا", drink_8_desc: "مایکرۆ-کەفی نەرم لەسەر ئیسپرێسۆی مەخمەلی لەگەڵ ڤانیلا.",
+                drink_9_name: "قاوەی تورکی بەهارات", drink_9_desc: "ئامادەکردنی نەریتی لەگەڵ هێل و تامێکی دارچین.",
+                cold_1_name: "شەربەتی پرتەقاڵی تازە", cold_1_desc: "پرتەقاڵی تازە گوشراو، سارد پێشکەشکراو لەگەڵ نەعناع.",
+                cold_2_name: "لیمۆنادەی توو", cold_2_desc: "تێکەڵێکی نوێژەر لە توو، لیمۆ، و ئاوی گازدار.",
+                cold_3_name: "مۆهیتۆی بێ ئەلکحول", cold_3_desc: "نەعناعی تازە، لیمۆ، و سۆدای گازدار لەسەر سەهۆڵی وردکراو.",
+                cold_4_name: "چای ODOR", cold_4_desc: "گەڵاکانی چای ڕەشی دەستکرد، بە هێواشی لەگەڵ بەهاراتی بۆندار ئامادەکراو و گەرم پێشکەشکراو.",
+                cold_5_name: "سمۆسی فرۆڵە", cold_5_desc: "فرۆڵەی تازە تێکەڵکراو لەگەڵ شیر و شەربەتی فرۆڵە لەسەر سەهۆڵ.",
+                cold_6_name: "سمۆسی مۆز", cold_6_desc: "مۆزی تازە تێکەڵکراو لەگەڵ شیر و هەنگوین لەسەر سەهۆڵ.",
+                plx_title: "ODOR", plx_tagline: "بە هێواشی دروستکراو · بە تەواوی چێژلێکراو", plx_scroll: "بڕۆ خوارەوە",
+                blog_title: "چی ڕوودەدات لە ODOR", blog_sub: "هەواڵ، پێشکەشکردن، و کاتژمێرەکانی کارکردن.",
+                blog_news_title: "دوایین هەواڵەکان",
+                blog_news_text: "دڵخۆشین کە مێنیوی زستانی نوێمان بە دەست دروستکراو ئاشکرا دەکەین، کە بە وردی دروستکراوە بۆ هێنانی گەرمی و ئارامی کاتێک وەرزەکە سارد دەبێت. لە ناو پێشکەشکردنە نوێیەکانمان قاوەی تورکی بەهاراتدار دەوڵەمەند و بۆندارە — لەگەڵ تامی هێل و دارچین — و کارامێل ماکیاتۆی ئاوریشمی، لەگەڵ ئیسپرێسۆی تازە برژاو و شەربەتی ڤانیلای ماڵەوە. ئەگەر پێویستت بە بەرزکردنەوەی بەیانی گەرم هەیە یان شوێنێک بۆ ئارامبوونەوە لەگەڵ هاوڕێیان، ئەم هەفتەیە سەردانی شوێنەکەمان لە هەولێر بکە و خواردنەوەی زستانی دڵخوازی خۆت تاقی بکەرەوە!",
+                blog_news_date: "ئێستا لە مێنیودا بەردەستە",
+                disc_title: "پێشکەشکردنی کاتی سنووردار", disc_sub: "خواردنەوەی دڵخوازی خۆت بەدەست بهێنە پێش ئەوەی کاتەکە تەواو ببێت.",
+                disc_offer_title: "20% داشکاندن لە هەموو خواردنەوە تایبەتەکان",
+                disc_offer_text: "بۆ ماوەیەکی سنووردار، چێژی 20% داشکاندن ببینە لە هەموو قاوەیەکی دەستکرد لە مێنیوکەماندا. ئەگەر بەدوای لاتی مەخمەلی یان ئیسپرێسۆی نیوەشەوی بەهێزدا بگەڕێی، ئێستا کاتی گونجاوە. لە هەولێر سەردانمان بکە و خۆت خۆش بخە — ئەم پێشکەشکردنە درێژە ناکێشێت.",
+                disc_date: "پێشکەشکردنەکە بەم زووانە تەواو دەبێت — لێی مەخەوە!",
+                timer_days: "ڕۆژ", timer_hours: "کاتژمێر", timer_minutes: "خولەک", timer_seconds: "چرکە",
+                contact_title: "بمانبینە", contact_sub: "بۆ قاوە بێ، بۆ کەشوهەوا بمێنەوە.",
+                contact_address: "ناونیشان", contact_hours: "کاتژمێرەکانی کارکردن", contact_phone: "تەلەفۆن", contact_whatsapp: "واتساپ",
+                contact_directions: "ئاراستەکان بەدەست بهێنە",
+                contact_hours_text: "ڕۆژانە: 8:00 بەیانی – 2:00 بەیانی",
+                contact_wa_text: "پەیاممان بۆ بنێرە بۆ داواکاری",
+                foot_tagline: "بە هێواشی دروستکراو. بە تەواوی چێژلێکراو.",
+                foot_blurb: "ماڵی هەولێر بۆ قاوەی تایبەت، دانەکانی دەستکرد، و ساتەکانی شایەنی وەستان.",
+                foot_explore: "بگەڕێ", foot_visit: "سەردانمان بکە", foot_news: "لە ئاگاداریدا بە",
+                foot_news_text: "خواردنەوەی نوێ، پێشکەشکردنی نهێنی، و ڕووداوەکانی کافێ — ڕاستەوخۆ بۆ ئیمەیڵەکەت.",
+                foot_news_placeholder: "ئیمەیڵەکەت",
+                foot_copyright: "© 2025 ODOR Coffee · هەموو مافەکان پارێزراون.",
+                foot_credit: 'بە <i class="fas fa-heart"></i> لە هەولێر دروستکراوە'
+            }
+        };
+
+        function setLanguage(lang) {
+            const t = TRANSLATIONS[lang];
+            if (!t) return;
+
+            const isRTL = (lang === 'ar' || lang === 'ku');
+            document.documentElement.lang = lang;
+            document.documentElement.dir = isRTL ? 'rtl' : 'ltr';
+
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (t[key] !== undefined) el.textContent = t[key];
+            });
+
+            document.querySelectorAll('[data-i18n-html]').forEach(el => {
+                const key = el.getAttribute('data-i18n-html');
+                if (t[key] !== undefined) el.innerHTML = t[key];
+            });
+
+            document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+                const key = el.getAttribute('data-i18n-placeholder');
+                if (t[key] !== undefined) el.placeholder = t[key];
+            });
+
+            document.querySelectorAll('.lang-option').forEach(opt => {
+                opt.classList.toggle('active', opt.dataset.lang === lang);
+            });
+
+            try { localStorage.setItem('odor_lang', lang); } catch(e) {}
+        }
+
+        // ─── LANGUAGE DROPDOWN ───
+        (function() {
+            const dropdown = document.querySelector('.lang-dropdown');
+            const trigger  = dropdown ? dropdown.querySelector('.lang-trigger') : null;
+            const options  = document.querySelectorAll('.lang-option');
+
+            if (!dropdown || !trigger) return;
+
+            trigger.addEventListener('click', (e) => {
+                e.stopPropagation();
+                dropdown.classList.toggle('open');
+            });
+
+            options.forEach(opt => {
+                opt.addEventListener('click', () => {
+                    setLanguage(opt.dataset.lang);
+                    dropdown.classList.remove('open');
+                });
+            });
+
+            document.addEventListener('click', (e) => {
+                if (!dropdown.contains(e.target)) {
+                    dropdown.classList.remove('open');
+                }
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') dropdown.classList.remove('open');
+            });
+        })();
+
+        // Load saved language on page load
+        (function() {
+            let saved = 'en';
+            try { saved = localStorage.getItem('odor_lang') || 'en'; } catch(e) {}
+            if (saved !== 'en') setLanguage(saved);
+        })();
+    </script>
+</body>
+</html>
