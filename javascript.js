@@ -96,3 +96,62 @@
 
 
 
+
+// ─── ADVANCED UI/UX & BUTTON FUNCTIONALITY ───
+document.addEventListener("DOMContentLoaded", function() {
+    // 1. Setup Toast Notification System
+    const toast = document.createElement('div');
+    toast.className = 'ui-toast';
+    toast.innerHTML = '<i class="fas fa-check-circle"></i> <span>Item added to cart!</span>';
+    document.body.appendChild(toast);
+
+    let toastTimeout;
+    function showToast(message) {
+        toast.querySelector('span').innerText = message;
+        toast.classList.add('show');
+        clearTimeout(toastTimeout);
+        toastTimeout = setTimeout(() => {
+            toast.classList.remove('show');
+        }, 3000);
+    }
+
+    // 2. Make "Add to Cart" buttons workable
+    const addBtns = document.querySelectorAll('.add-btn');
+    addBtns.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault(); // Stop page from jumping to top
+            
+            // Add a quick click animation
+            this.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                this.style.transform = '';
+            }, 150);
+
+            // Get product name if possible, otherwise generic
+            const card = this.closest('.shop-card');
+            let itemName = "Item";
+            if (card) {
+                const titleEl = card.querySelector('h3');
+                if (titleEl) itemName = titleEl.innerText;
+            }
+            
+            showToast(itemName + ' added to cart!');
+        });
+    });
+
+    // 3. Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return; // Skip empty anchors
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                e.preventDefault();
+                targetElement.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+});
