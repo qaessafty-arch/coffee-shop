@@ -3581,3 +3581,104 @@ html {
         letter-spacing: 1px !important;
     }
 }
+
+/* ==========================================================
+   STRICT 2-COLUMN MOBILE MENU FIX
+   (Overrides the 1-column layout with perfect 2-column constraints)
+========================================================== */
+@media (max-width: 768px) {
+    /* Enforce Strict 2-Column Grid */
+    .shop-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
+        width: 100% !important;
+        padding: 0 10px 4rem 10px !important; /* Bottom padding to fix truncation */
+        margin: 0 !important;
+        flex-direction: unset !important;
+    }
+
+    /* Fixed Height & Alignment for Cards */
+    .shop-card {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        text-align: left !important;
+        padding: 1rem 0.8rem !important;
+        border-radius: 12px !important;
+        background: linear-gradient(145deg, rgba(42, 30, 23, 0.95), rgba(30, 20, 15, 0.95)) !important;
+        border: 1px solid rgba(184, 149, 122, 0.15) !important;
+        height: 100% !important; /* Keep all cards uniform */
+        box-sizing: border-box !important;
+    }
+
+    html[dir="rtl"] .shop-card {
+        align-items: flex-end !important;
+        text-align: right !important;
+    }
+
+    /* 1. Icon */
+    .shop-icon {
+        order: 1 !important;
+        font-size: 1.4rem !important;
+        color: #b8957a !important;
+        margin: 0 0 0.5rem 0 !important;
+        width: auto !important;
+        height: auto !important;
+        background: none !important;
+        border: none !important;
+        display: block !important;
+        position: static !important;
+    }
+
+    /* 2. Title (Prevent awkward breaking) */
+    .shop-card h3, html[dir="rtl"] .shop-card h3 {
+        order: 2 !important;
+        font-size: 1rem !important;
+        font-weight: 700 !important;
+        line-height: 1.2 !important;
+        color: #ffffff !important;
+        margin: 0 0 0.4rem 0 !important;
+        text-wrap: balance !important; /* Balances text beautifully */
+        word-wrap: normal !important;
+        hyphens: none !important;
+    }
+
+    /* 3. Description (Line Clamped!) */
+    .shop-card p, html[dir="rtl"] .shop-card p {
+        order: 3 !important;
+        font-size: 0.75rem !important;
+        line-height: 1.4 !important;
+        color: rgba(255, 255, 255, 0.85) !important;
+        margin: 0 0 0.8rem 0 !important;
+        /* Force line clamping to exactly 3 lines */
+        display: -webkit-box !important;
+        -webkit-line-clamp: 3 !important; 
+        -webkit-box-orient: vertical !important;
+        overflow: hidden !important;
+    }
+
+    /* 4. Price (Pushed to bottom) */
+    .price, html[dir="rtl"] .price {
+        order: 4 !important;
+        font-size: 1.1rem !important;
+        color: #b8957a !important;
+        font-weight: 700 !important;
+        margin: auto 0 0.6rem 0 !important; /* pushes price to absolute bottom */
+    }
+
+    /* 5. Tappable Button */
+    .add-btn, html[dir="rtl"] .add-btn {
+        order: 5 !important;
+        width: 100% !important;
+        min-height: 44px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        font-size: 0.8rem !important;
+        padding: 0 0.5rem !important;
+        border-radius: 8px !important;
+        white-space: nowrap !important; /* Never wrap button text */
+        margin: 0 !important;
+    }
+}
