@@ -3682,3 +3682,75 @@ html {
         margin: 0 !important;
     }
 }
+
+/* ==========================================================
+   GLASSMORPHISM UI & UX MENU PLACEMENT FIX
+========================================================== */
+/* 1. Sleek Glass UI for the Coffee Cards */
+.shop-card {
+    background: rgba(50, 35, 25, 0.3) !important; /* Translucent espresso */
+    backdrop-filter: blur(16px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.2) !important; /* Subtle top highlight */
+    border-left: 1px solid rgba(255, 255, 255, 0.2) !important;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4) !important;
+}
+
+/* 2. Fix UX Placement of the Navigation Menu (Full-Screen Glass Overlay) */
+@media (max-width: 768px) {
+    .nav-links {
+        display: flex !important;
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100vw !important;
+        height: 100vh !important;
+        background: rgba(20, 14, 10, 0.65) !important; /* Dark sheer backdrop */
+        backdrop-filter: blur(24px) saturate(150%) !important;
+        -webkit-backdrop-filter: blur(24px) saturate(150%) !important;
+        flex-direction: column !important;
+        justify-content: center !important; /* Centered vertically for perfect UX */
+        align-items: center !important;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        z-index: 9998 !important; /* Below the hamburger button */
+        padding: 0 !important;
+        margin: 0 !important;
+        transform: none !important; /* Remove old translate animation */
+    }
+    
+    .nav-links.open {
+        opacity: 1 !important;
+        pointer-events: auto !important;
+    }
+    
+    .nav-links a {
+        font-size: 1.8rem !important; /* Large, easy-to-tap touch targets */
+        padding: 1.5rem !important;
+        width: 100% !important;
+        text-align: center !important;
+        letter-spacing: 2px !important;
+        color: #f5ece6 !important;
+    }
+    
+    .nav-links a::after {
+        display: none !important; /* Remove old underline animation for clean glass look */
+    }
+
+    /* Ensure hamburger menu button stays clickable above the glass overlay */
+    .mobile-menu-btn {
+        position: relative !important;
+        z-index: 9999 !important; 
+        background: rgba(0,0,0,0.5) !important; /* Small background so it's visible over content */
+        border-radius: 50% !important;
+        width: 45px !important;
+        height: 45px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        backdrop-filter: blur(5px) !important;
+        border: 1px solid rgba(255,255,255,0.1) !important;
+    }
+}
