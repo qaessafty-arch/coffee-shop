@@ -98,7 +98,7 @@
 
 
 // ─── ADVANCED UI/UX & BUTTON FUNCTIONALITY ───
-document.addEventListener("DOMContentLoaded", function() {
+(function() {
     // 1. Setup Toast Notification System
     const toast = document.createElement('div');
     toast.className = 'ui-toast';
