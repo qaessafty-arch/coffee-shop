@@ -443,7 +443,7 @@ body {
     .video-content h2 { font-size: 2.5rem; }
 
     .shop-content { padding: 4rem 1.5rem; }
-    .shop-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .shop-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
 }
 
 /* ─── Scrollbar ─── */
