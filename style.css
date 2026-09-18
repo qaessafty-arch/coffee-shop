@@ -3786,3 +3786,31 @@ html {
         margin: 0 !important;
     }
 }
+
+/* ==========================================================
+   MAKE CARDS WIDER (Maximize Screen Width on Mobile)
+========================================================== */
+@media (max-width: 768px) {
+    /* 1. Remove the restrictive side padding from the main shop section container */
+    .shop-content {
+        padding-left: 4px !important;
+        padding-right: 4px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+    
+    /* 2. Reduce grid gaps and padding to push cards closer to the screen edges */
+    .shop-grid {
+        padding-left: 2px !important;
+        padding-right: 2px !important;
+        gap: 8px !important; /* Smaller gap between columns = wider cards */
+        width: 100% !important;
+        max-width: 100vw !important;
+        box-sizing: border-box !important;
+    }
+    
+    /* 3. Give the text slightly more horizontal room inside the card */
+    .shop-card {
+        padding: 1rem 0.6rem !important; /* Reduced from 0.8rem to 0.6rem for more internal width */
+    }
+}
