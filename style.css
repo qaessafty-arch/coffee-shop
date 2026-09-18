@@ -3306,3 +3306,43 @@ html, body {
         padding-right: 0 !important;
     }
 }
+
+/* ==========================================================
+   MENU SIZING FIX (Mobile Nav Menu & Shop Grid Safety)
+========================================================== */
+@media (max-width: 768px) {
+    /* 1. Fix the Navigation Menu drop-down size and position */
+    .nav-links {
+        width: 100vw !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        top: 70px !important; /* Push it slightly lower so it doesn't overlap the logo/icons */
+        padding: 1.5rem 10px !important;
+        left: 0 !important;
+        margin: 0 !important;
+    }
+    
+    .nav-links li {
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+    
+    .nav-links a {
+        font-size: 1.1rem !important; /* Slightly larger, easier to tap */
+        display: block !important;
+        width: 100% !important;
+    }
+
+    /* 2. Extra safety for the 2-column Coffee Menu to prevent overflow */
+    .shop-card {
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+        hyphens: auto !important;
+    }
+    .shop-card h3 {
+        font-size: 1rem !important;
+    }
+    .shop-card p {
+        font-size: 0.7rem !important;
+    }
+}
