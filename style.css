@@ -3410,3 +3410,75 @@ html {
     height: 200px;
     transition: 0s;
 }
+
+/* ==========================================================
+   FINAL 2-COLUMN SHOP MENU FIX FOR MOBILE
+========================================================== */
+@media (max-width: 768px) {
+    /* Force exactly 2 columns for the menu */
+    .shop-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+        width: 100% !important;
+        padding: 0 5px !important;
+        margin: 0 !important;
+    }
+
+    /* Perfectly proportioned card */
+    .shop-card {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        padding: 15px 10px !important;
+        border-radius: 12px !important;
+        height: 100% !important; /* Make cards equal height */
+        box-sizing: border-box !important;
+        word-wrap: normal !important; /* Revert strange wrapping */
+        overflow-wrap: normal !important;
+        hyphens: none !important;
+    }
+
+    /* Fix the icon size */
+    .shop-icon {
+        font-size: 2rem !important;
+        margin-bottom: 8px !important;
+    }
+
+    /* Fix text sizes to be readable but not overlapping */
+    .shop-card h3, html[dir="rtl"] .shop-card h3 {
+        font-size: 1.05rem !important;
+        line-height: 1.2 !important;
+        margin-bottom: 6px !important;
+        text-align: center !important;
+        min-height: 2.4rem !important; /* keeps titles aligned */
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    .shop-card p, html[dir="rtl"] .shop-card p {
+        font-size: 0.75rem !important;
+        line-height: 1.4 !important;
+        text-align: center !important;
+        margin-bottom: 10px !important;
+    }
+
+    .price, html[dir="rtl"] .price {
+        font-size: 1.15rem !important;
+        margin-bottom: 12px !important;
+    }
+
+    /* Keep button uniformly sized */
+    .add-btn, html[dir="rtl"] .add-btn {
+        width: 100% !important;
+        padding: 10px 5px !important;
+        font-size: 0.75rem !important;
+        text-align: center !important;
+        box-sizing: border-box !important;
+        border-radius: 20px !important;
+        white-space: nowrap !important;
+        margin-top: auto !important; /* pushes button to bottom */
+    }
+}
