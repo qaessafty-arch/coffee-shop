@@ -3754,3 +3754,35 @@ html {
         border: 1px solid rgba(255,255,255,0.1) !important;
     }
 }
+
+/* ==========================================================
+   PERFECT EQUAL DIVISION FIX (For Mobile Cards & Nav Menu)
+========================================================== */
+@media (max-width: 768px) {
+    /* 1. Force Coffee Columns to be exactly 50/50 geometrically */
+    /* (Using minmax(0, 1fr) stops wider content from pushing one column wider than the other) */
+    .shop-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        justify-content: space-between !important;
+    }
+    
+    .shop-card {
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow: hidden !important;
+    }
+
+    /* 2. Spread the Glass Navigation Links equally across the screen */
+    .nav-links {
+        justify-content: space-evenly !important;
+        padding: 15vh 0 !important; /* Add some padding so they don't hit the very top/bottom edges */
+    }
+    
+    .nav-links a {
+        flex: 1 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        margin: 0 !important;
+    }
+}
