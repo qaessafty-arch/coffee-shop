@@ -3866,3 +3866,68 @@ html {
         font-size: 1.1rem !important;
     }
 }
+
+/* ==========================================================
+   THE "GOLDILOCKS" 2-COLUMN MOBILE MENU 
+   (Balanced Wideness - Not too narrow, not full-screen)
+========================================================== */
+@media (max-width: 768px) {
+    /* 1. Restore a balanced amount of side padding so it doesn't hug the absolute edges */
+    .shop-content {
+        padding-left: 12px !important;
+        padding-right: 12px !important;
+    }
+
+    /* 2. Enforce a beautiful, balanced 2-column grid */
+    .shop-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 14px !important; /* Balanced gap between the two columns */
+        width: 100% !important;
+        padding: 0 0 4rem 0 !important; /* Bottom padding to fix truncation */
+        box-sizing: border-box !important;
+    }
+
+    /* 3. Card internals for a 2-column fit */
+    .shop-card {
+        width: 100% !important;
+        padding: 1.2rem 0.8rem !important; /* Balanced inner padding */
+        align-items: flex-start !important;
+        text-align: left !important;
+        height: 100% !important; /* Keep heights perfectly uniform */
+    }
+
+    html[dir="rtl"] .shop-card {
+        align-items: flex-end !important;
+        text-align: right !important;
+    }
+
+    /* 4. Typography sizing tailored for the 2-column width */
+    .shop-card h3, html[dir="rtl"] .shop-card h3 {
+        font-size: 1.05rem !important;
+        margin-bottom: 0.4rem !important;
+        text-wrap: balance !important; /* Prevents weird word breaks */
+    }
+
+    .shop-card p, html[dir="rtl"] .shop-card p {
+        font-size: 0.75rem !important;
+        line-height: 1.4 !important;
+        margin-bottom: 0.8rem !important;
+        display: -webkit-box !important;
+        -webkit-line-clamp: 3 !important; /* Prevents text from breaking the card height */
+        -webkit-box-orient: vertical !important;
+        overflow: hidden !important;
+    }
+
+    .price, html[dir="rtl"] .price {
+        font-size: 1.15rem !important;
+        margin: auto 0 0.6rem 0 !important; /* Pushes price/button to bottom */
+    }
+
+    .add-btn, html[dir="rtl"] .add-btn {
+        min-height: 44px !important;
+        font-size: 0.8rem !important;
+        padding: 0 0.5rem !important;
+        width: 100% !important;
+    }
+}
