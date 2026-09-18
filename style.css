@@ -3814,3 +3814,55 @@ html {
         padding: 1rem 0.6rem !important; /* Reduced from 0.8rem to 0.6rem for more internal width */
     }
 }
+
+/* ==========================================================
+   ULTIMATE WIDE CARDS (Full Width 1-Column Layout)
+========================================================== */
+@media (max-width: 768px) {
+    /* To make them any wider on a small screen, they MUST be 1 column */
+    .shop-grid {
+        display: grid !important;
+        grid-template-columns: 1fr !important; /* Full 100% width of the screen */
+        gap: 24px !important;
+        width: 100% !important;
+        padding: 0 15px 4rem 15px !important; /* Generous edge padding */
+        box-sizing: border-box !important;
+    }
+
+    .shop-card {
+        width: 100% !important;
+        padding: 2rem 1.5rem !important; /* Restore luxurious breathing room */
+        align-items: flex-start !important;
+        text-align: left !important;
+        height: auto !important; /* Let it grow naturally */
+    }
+    
+    html[dir="rtl"] .shop-card {
+        align-items: flex-end !important;
+        text-align: right !important;
+    }
+
+    /* Release the text constraints since they have the full screen width now */
+    .shop-card p, html[dir="rtl"] .shop-card p {
+        display: block !important;
+        -webkit-line-clamp: unset !important; /* Remove 3-line limit */
+        font-size: 1rem !important;
+        line-height: 1.6 !important;
+        margin-bottom: 1.5rem !important;
+    }
+
+    .shop-card h3, html[dir="rtl"] .shop-card h3 {
+        font-size: 1.6rem !important;
+        margin-bottom: 0.5rem !important;
+    }
+    
+    .price, html[dir="rtl"] .price {
+        font-size: 1.3rem !important;
+        margin-bottom: 1rem !important;
+    }
+
+    .add-btn, html[dir="rtl"] .add-btn {
+        min-height: 50px !important;
+        font-size: 1.1rem !important;
+    }
+}
