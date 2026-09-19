@@ -3308,46 +3308,6 @@ html, body {
 }
 
 /* ==========================================================
-   MENU SIZING FIX (Mobile Nav Menu & Shop Grid Safety)
-========================================================== */
-@media (max-width: 768px) {
-    /* 1. Fix the Navigation Menu drop-down size and position */
-    .nav-links {
-        width: 100vw !important;
-        max-width: 100% !important;
-        box-sizing: border-box !important;
-        top: 70px !important; /* Push it slightly lower so it doesn't overlap the logo/icons */
-        padding: 1.5rem 10px !important;
-        left: 0 !important;
-        margin: 0 !important;
-    }
-    
-    .nav-links li {
-        width: 100% !important;
-        box-sizing: border-box !important;
-    }
-    
-    .nav-links a {
-        font-size: 1.1rem !important; /* Slightly larger, easier to tap */
-        display: block !important;
-        width: 100% !important;
-    }
-
-    /* 2. Extra safety for the 2-column Coffee Menu to prevent overflow */
-    .shop-card {
-        word-wrap: break-word !important;
-        overflow-wrap: break-word !important;
-        hyphens: auto !important;
-    }
-    .shop-card h3 {
-        font-size: 1rem !important;
-    }
-    .shop-card p {
-        font-size: 0.7rem !important;
-    }
-}
-
-/* ==========================================================
    ADVANCED UI/UX ENHANCEMENTS & WORKABLE BUTTONS
 ========================================================== */
 html {
@@ -3412,609 +3372,188 @@ html {
 }
 
 /* ==========================================================
-   FINAL 2-COLUMN SHOP MENU FIX FOR MOBILE
+   GLASSMORPHISM UI (COFFEE CARDS)
 ========================================================== */
-@media (max-width: 768px) {
-    /* Force exactly 2 columns for the menu */
-    .shop-grid {
-        display: grid !important;
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 10px !important;
-        width: 100% !important;
-        padding: 0 5px !important;
-        margin: 0 !important;
-    }
-
-    /* Perfectly proportioned card */
-    .shop-card {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        justify-content: space-between !important;
-        padding: 15px 10px !important;
-        border-radius: 12px !important;
-        height: 100% !important; /* Make cards equal height */
-        box-sizing: border-box !important;
-        word-wrap: normal !important; /* Revert strange wrapping */
-        overflow-wrap: normal !important;
-        hyphens: none !important;
-    }
-
-    /* Fix the icon size */
-    .shop-icon {
-        font-size: 2rem !important;
-        margin-bottom: 8px !important;
-    }
-
-    /* Fix text sizes to be readable but not overlapping */
-    .shop-card h3, html[dir="rtl"] .shop-card h3 {
-        font-size: 1.05rem !important;
-        line-height: 1.2 !important;
-        margin-bottom: 6px !important;
-        text-align: center !important;
-        min-height: 2.4rem !important; /* keeps titles aligned */
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-    }
-
-    .shop-card p, html[dir="rtl"] .shop-card p {
-        font-size: 0.75rem !important;
-        line-height: 1.4 !important;
-        text-align: center !important;
-        margin-bottom: 10px !important;
-    }
-
-    .price, html[dir="rtl"] .price {
-        font-size: 1.15rem !important;
-        margin-bottom: 12px !important;
-    }
-
-    /* Keep button uniformly sized */
-    .add-btn, html[dir="rtl"] .add-btn {
-        width: 100% !important;
-        padding: 10px 5px !important;
-        font-size: 0.75rem !important;
-        text-align: center !important;
-        box-sizing: border-box !important;
-        border-radius: 20px !important;
-        white-space: nowrap !important;
-        margin-top: auto !important; /* pushes button to bottom */
-    }
-}
-
-/* ==========================================================
-   PREMIUM 1-COLUMN MOBILE MENU REDESIGN
-========================================================== */
-@media (max-width: 768px) {
-    /* 1. Switch to Single Column & Fix Truncation (Bottom Padding) */
-    .shop-grid {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 1.5rem !important;
-        width: 100% !important;
-        padding: 0 15px 4rem 15px !important; /* 4rem bottom padding so items aren't cut off */
-        margin: 0 !important;
-    }
-
-    /* 2. Spacious Vertical Card */
-    .shop-card {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: flex-start !important;
-        text-align: left !important;
-        padding: 1.8rem 1.5rem !important; /* Room to breathe */
-        border-radius: 16px !important;
-        background: linear-gradient(145deg, rgba(42, 30, 23, 0.98), rgba(28, 20, 15, 0.98)) !important;
-        border: 1px solid rgba(184, 149, 122, 0.15) !important;
-        box-shadow: 0 12px 30px rgba(0,0,0,0.6) !important;
-        width: 100% !important;
-        box-sizing: border-box !important;
-        height: auto !important; /* Let it grow naturally for long descriptions */
-    }
-
-    html[dir="rtl"] .shop-card {
-        align-items: flex-end !important;
-        text-align: right !important;
-    }
-
-    /* 3. Visually Consistent Icons */
-    .shop-icon {
-        order: 1 !important;
-        font-size: 1.6rem !important;
-        color: #b8957a !important;
-        margin: 0 0 1.2rem 0 !important;
-        background: rgba(184, 149, 122, 0.1) !important;
-        width: 54px !important;
-        height: 54px !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        border-radius: 14px !important;
-        border: 1px solid rgba(184, 149, 122, 0.2) !important;
-    }
-
-    /* 4. Strong Visual Hierarchy (Name -> Price -> Description) */
-    .shop-card h3, html[dir="rtl"] .shop-card h3 {
-        order: 2 !important;
-        font-size: 1.45rem !important;
-        line-height: 1.3 !important;
-        color: #ffffff !important;
-        margin: 0 0 0.4rem 0 !important;
-        min-height: auto !important;
-        display: block !important;
-        text-align: inherit !important;
-    }
-
-    .price, html[dir="rtl"] .price {
-        order: 3 !important;
-        font-size: 1.3rem !important;
-        color: #b8957a !important; /* Signature coffee gold */
-        margin: 0 0 1rem 0 !important;
-        font-weight: 700 !important;
-        letter-spacing: 0.5px !important;
-    }
-
-    /* 5. Increased Contrast for Description */
-    .shop-card p, html[dir="rtl"] .shop-card p {
-        order: 4 !important;
-        font-size: 0.95rem !important;
-        line-height: 1.6 !important;
-        color: rgba(255, 255, 255, 0.95) !important; /* Brighter for contrast */
-        margin: 0 0 1.5rem 0 !important;
-        text-align: inherit !important;
-    }
-
-    /* 6. Easily Tappable Buttons (Min 44px height) */
-    .add-btn, html[dir="rtl"] .add-btn {
-        order: 5 !important;
-        min-height: 48px !important; /* Super accessible touch target */
-        width: 100% !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        font-size: 1rem !important;
-        font-weight: 600 !important;
-        padding: 0 1.5rem !important;
-        border-radius: 12px !important;
-        margin-top: 0 !important;
-        letter-spacing: 1px !important;
-    }
-}
-
-/* ==========================================================
-   STRICT 2-COLUMN MOBILE MENU FIX
-   (Overrides the 1-column layout with perfect 2-column constraints)
-========================================================== */
-@media (max-width: 768px) {
-    /* Enforce Strict 2-Column Grid */
-    .shop-grid {
-        display: grid !important;
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 12px !important;
-        width: 100% !important;
-        padding: 0 10px 4rem 10px !important; /* Bottom padding to fix truncation */
-        margin: 0 !important;
-        flex-direction: unset !important;
-    }
-
-    /* Fixed Height & Alignment for Cards */
-    .shop-card {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: flex-start !important;
-        text-align: left !important;
-        padding: 1rem 0.8rem !important;
-        border-radius: 12px !important;
-        background: linear-gradient(145deg, rgba(42, 30, 23, 0.95), rgba(30, 20, 15, 0.95)) !important;
-        border: 1px solid rgba(184, 149, 122, 0.15) !important;
-        height: 100% !important; /* Keep all cards uniform */
-        box-sizing: border-box !important;
-    }
-
-    html[dir="rtl"] .shop-card {
-        align-items: flex-end !important;
-        text-align: right !important;
-    }
-
-    /* 1. Icon */
-    .shop-icon {
-        order: 1 !important;
-        font-size: 1.4rem !important;
-        color: #b8957a !important;
-        margin: 0 0 0.5rem 0 !important;
-        width: auto !important;
-        height: auto !important;
-        background: none !important;
-        border: none !important;
-        display: block !important;
-        position: static !important;
-    }
-
-    /* 2. Title (Prevent awkward breaking) */
-    .shop-card h3, html[dir="rtl"] .shop-card h3 {
-        order: 2 !important;
-        font-size: 1rem !important;
-        font-weight: 700 !important;
-        line-height: 1.2 !important;
-        color: #ffffff !important;
-        margin: 0 0 0.4rem 0 !important;
-        text-wrap: balance !important; /* Balances text beautifully */
-        word-wrap: normal !important;
-        hyphens: none !important;
-    }
-
-    /* 3. Description (Line Clamped!) */
-    .shop-card p, html[dir="rtl"] .shop-card p {
-        order: 3 !important;
-        font-size: 0.75rem !important;
-        line-height: 1.4 !important;
-        color: rgba(255, 255, 255, 0.85) !important;
-        margin: 0 0 0.8rem 0 !important;
-        /* Force line clamping to exactly 3 lines */
-        display: -webkit-box !important;
-        -webkit-line-clamp: 3 !important; 
-        -webkit-box-orient: vertical !important;
-        overflow: hidden !important;
-    }
-
-    /* 4. Price (Pushed to bottom) */
-    .price, html[dir="rtl"] .price {
-        order: 4 !important;
-        font-size: 1.1rem !important;
-        color: #b8957a !important;
-        font-weight: 700 !important;
-        margin: auto 0 0.6rem 0 !important; /* pushes price to absolute bottom */
-    }
-
-    /* 5. Tappable Button */
-    .add-btn, html[dir="rtl"] .add-btn {
-        order: 5 !important;
-        width: 100% !important;
-        min-height: 44px !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        font-size: 0.8rem !important;
-        padding: 0 0.5rem !important;
-        border-radius: 8px !important;
-        white-space: nowrap !important; /* Never wrap button text */
-        margin: 0 !important;
-    }
-}
-
-/* ==========================================================
-   GLASSMORPHISM UI & UX MENU PLACEMENT FIX
-========================================================== */
-/* 1. Sleek Glass UI for the Coffee Cards */
 .shop-card {
-    background: rgba(50, 35, 25, 0.3) !important; /* Translucent espresso */
+    background: rgba(45, 30, 20, 0.45) !important;
     backdrop-filter: blur(16px) saturate(180%) !important;
     -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
     border: 1px solid rgba(255, 255, 255, 0.12) !important;
-    border-top: 1px solid rgba(255, 255, 255, 0.2) !important; /* Subtle top highlight */
-    border-left: 1px solid rgba(255, 255, 255, 0.2) !important;
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4) !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.22) !important;
+    border-left: 1px solid rgba(255, 255, 255, 0.18) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45) !important;
 }
 
-/* 2. Fix UX Placement of the Navigation Menu (Full-Screen Glass Overlay) */
+/* ==========================================================
+   UNIFIED MOBILE MEDIA QUERY (NAV MENU & SHOP CARDS)
+   Max-width: 768px
+========================================================== */
 @media (max-width: 768px) {
+    /* 1. Body & Scroll Safety */
+    body {
+        overflow-x: hidden !important;
+        max-width: 100% !important;
+    }
+
+    body.menu-open {
+        overflow: hidden !important; /* Prevent page scroll when nav menu is open */
+    }
+
+    /* 2. Navigation Menu (Full-Screen Glass Overlay) */
     .nav-links {
         display: flex !important;
         position: fixed !important;
         top: 0 !important;
         left: 0 !important;
-        width: 100vw !important;
-        height: 100vh !important;
-        background: rgba(20, 14, 10, 0.65) !important; /* Dark sheer backdrop */
-        backdrop-filter: blur(24px) saturate(150%) !important;
-        -webkit-backdrop-filter: blur(24px) saturate(150%) !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        width: 100% !important;
+        height: 100dvh !important;
+        background: rgba(18, 12, 8, 0.88) !important;
+        backdrop-filter: blur(24px) saturate(160%) !important;
+        -webkit-backdrop-filter: blur(24px) saturate(160%) !important;
         flex-direction: column !important;
-        justify-content: center !important; /* Centered vertically for perfect UX */
+        justify-content: center !important;
         align-items: center !important;
-        opacity: 0;
-        pointer-events: none;
-        transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
-        z-index: 9998 !important; /* Below the hamburger button */
-        padding: 0 !important;
+        gap: 1.2rem !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+        transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        z-index: 9998 !important;
+        padding: 2rem 1rem !important;
         margin: 0 !important;
-        transform: none !important; /* Remove old translate animation */
+        transform: none !important;
+        box-sizing: border-box !important;
     }
-    
+
     .nav-links.open {
         opacity: 1 !important;
         pointer-events: auto !important;
     }
-    
-    .nav-links a {
-        font-size: 1.8rem !important; /* Large, easy-to-tap touch targets */
-        padding: 1.5rem !important;
+
+    .nav-links li {
         width: 100% !important;
+        text-align: center !important;
+        list-style: none !important;
+    }
+
+    .nav-links a {
+        font-size: 1.5rem !important;
+        padding: 0.8rem 1rem !important;
+        width: 100% !important;
+        display: block !important;
         text-align: center !important;
         letter-spacing: 2px !important;
         color: #f5ece6 !important;
+        text-decoration: none !important;
+        transition: color 0.2s ease !important;
     }
-    
+
+    .nav-links a:hover,
+    .nav-links a:active {
+        color: #b8957a !important;
+    }
+
     .nav-links a::after {
-        display: none !important; /* Remove old underline animation for clean glass look */
+        display: none !important;
     }
 
-    /* Ensure hamburger menu button stays clickable above the glass overlay */
+    /* Hamburger & Close Menu Button */
     .mobile-menu-btn {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
         position: relative !important;
-        z-index: 9999 !important; 
-        background: rgba(0,0,0,0.5) !important; /* Small background so it's visible over content */
+        z-index: 9999 !important;
+        width: 44px !important;
+        height: 44px !important;
         border-radius: 50% !important;
-        width: 45px !important;
-        height: 45px !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        backdrop-filter: blur(5px) !important;
-        border: 1px solid rgba(255,255,255,0.1) !important;
-    }
-}
-
-/* ==========================================================
-   PERFECT EQUAL DIVISION FIX (For Mobile Cards & Nav Menu)
-========================================================== */
-@media (max-width: 768px) {
-    /* 1. Force Coffee Columns to be exactly 50/50 geometrically */
-    /* (Using minmax(0, 1fr) stops wider content from pushing one column wider than the other) */
-    .shop-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-        justify-content: space-between !important;
-    }
-    
-    .shop-card {
-        width: 100% !important;
-        max-width: 100% !important;
-        overflow: hidden !important;
-    }
-
-    /* 2. Spread the Glass Navigation Links equally across the screen */
-    .nav-links {
-        justify-content: space-evenly !important;
-        padding: 15vh 0 !important; /* Add some padding so they don't hit the very top/bottom edges */
-    }
-    
-    .nav-links a {
-        flex: 1 !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        margin: 0 !important;
-    }
-}
-
-/* ==========================================================
-   MAKE CARDS WIDER (Maximize Screen Width on Mobile)
-========================================================== */
-@media (max-width: 768px) {
-    /* 1. Remove the restrictive side padding from the main shop section container */
-    .shop-content {
-        padding-left: 4px !important;
-        padding-right: 4px !important;
-        width: 100% !important;
-        box-sizing: border-box !important;
-    }
-    
-    /* 2. Reduce grid gaps and padding to push cards closer to the screen edges */
-    .shop-grid {
-        padding-left: 2px !important;
-        padding-right: 2px !important;
-        gap: 8px !important; /* Smaller gap between columns = wider cards */
-        width: 100% !important;
-        max-width: 100vw !important;
-        box-sizing: border-box !important;
-    }
-    
-    /* 3. Give the text slightly more horizontal room inside the card */
-    .shop-card {
-        padding: 1rem 0.6rem !important; /* Reduced from 0.8rem to 0.6rem for more internal width */
-    }
-}
-
-/* ==========================================================
-   ULTIMATE WIDE CARDS (Full Width 1-Column Layout)
-========================================================== */
-@media (max-width: 768px) {
-    /* To make them any wider on a small screen, they MUST be 1 column */
-    .shop-grid {
-        display: grid !important;
-        grid-template-columns: 1fr !important; /* Full 100% width of the screen */
-        gap: 24px !important;
-        width: 100% !important;
-        padding: 0 15px 4rem 15px !important; /* Generous edge padding */
-        box-sizing: border-box !important;
-    }
-
-    .shop-card {
-        width: 100% !important;
-        padding: 2rem 1.5rem !important; /* Restore luxurious breathing room */
-        align-items: flex-start !important;
-        text-align: left !important;
-        height: auto !important; /* Let it grow naturally */
-    }
-    
-    html[dir="rtl"] .shop-card {
-        align-items: flex-end !important;
-        text-align: right !important;
-    }
-
-    /* Release the text constraints since they have the full screen width now */
-    .shop-card p, html[dir="rtl"] .shop-card p {
-        display: block !important;
-        -webkit-line-clamp: unset !important; /* Remove 3-line limit */
-        font-size: 1rem !important;
-        line-height: 1.6 !important;
-        margin-bottom: 1.5rem !important;
-    }
-
-    .shop-card h3, html[dir="rtl"] .shop-card h3 {
-        font-size: 1.6rem !important;
-        margin-bottom: 0.5rem !important;
-    }
-    
-    .price, html[dir="rtl"] .price {
+        background: rgba(0, 0, 0, 0.55) !important;
+        backdrop-filter: blur(8px) !important;
+        -webkit-backdrop-filter: blur(8px) !important;
+        border: 1px solid rgba(255, 255, 255, 0.15) !important;
+        color: #b8957a !important;
         font-size: 1.3rem !important;
-        margin-bottom: 1rem !important;
+        cursor: pointer !important;
+        padding: 0 !important;
     }
 
-    .add-btn, html[dir="rtl"] .add-btn {
-        min-height: 50px !important;
-        font-size: 1.1rem !important;
-    }
-}
-
-/* ==========================================================
-   THE "GOLDILOCKS" 2-COLUMN MOBILE MENU 
-   (Balanced Wideness - Not too narrow, not full-screen)
-========================================================== */
-@media (max-width: 768px) {
-    /* 1. Restore a balanced amount of side padding so it doesn't hug the absolute edges */
+    /* 3. Shop Content Container */
     .shop-content {
-        padding-left: 12px !important;
-        padding-right: 12px !important;
-    }
-
-    /* 2. Enforce a beautiful, balanced 2-column grid */
-    .shop-grid {
-        display: grid !important;
-        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-        gap: 14px !important; /* Balanced gap between the two columns */
         width: 100% !important;
-        padding: 0 0 4rem 0 !important; /* Bottom padding to fix truncation */
+        max-width: 100% !important;
         box-sizing: border-box !important;
-    }
-
-    /* 3. Card internals for a 2-column fit */
-    .shop-card {
-        width: 100% !important;
-        padding: 1.2rem 0.8rem !important; /* Balanced inner padding */
-        align-items: flex-start !important;
-        text-align: left !important;
-        height: 100% !important; /* Keep heights perfectly uniform */
-    }
-
-    html[dir="rtl"] .shop-card {
-        align-items: flex-end !important;
-        text-align: right !important;
-    }
-
-    /* 4. Typography sizing tailored for the 2-column width */
-    .shop-card h3, html[dir="rtl"] .shop-card h3 {
-        font-size: 1.05rem !important;
-        margin-bottom: 0.4rem !important;
-        text-wrap: balance !important; /* Prevents weird word breaks */
-    }
-
-    .shop-card p, html[dir="rtl"] .shop-card p {
-        font-size: 0.75rem !important;
-        line-height: 1.4 !important;
-        margin-bottom: 0.8rem !important;
-        display: -webkit-box !important;
-        -webkit-line-clamp: 3 !important; /* Prevents text from breaking the card height */
-        -webkit-box-orient: vertical !important;
+        padding-left: 10px !important;
+        padding-right: 10px !important;
         overflow: hidden !important;
     }
 
-    .price, html[dir="rtl"] .price {
-        font-size: 1.15rem !important;
-        margin: auto 0 0.6rem 0 !important; /* Pushes price/button to bottom */
-    }
-
-    .add-btn, html[dir="rtl"] .add-btn {
-        min-height: 44px !important;
-        font-size: 0.8rem !important;
-        padding: 0 0.5rem !important;
-        width: 100% !important;
-    }
-}
-
-/* ==========================================================
-   BULLETPROOF MOBILE SIZING & OVERFLOW FIXES
-========================================================== */
-@media (max-width: 768px) {
-    /* --- FIX 1: Navigation Glass Menu Size --- */
-    /* Use 100% instead of 100vw to prevent horizontal scrolling */
-    /* Use 100dvh (dynamic viewport height) to prevent mobile browser URL bars from cutting off the bottom */
-    .nav-links {
-        width: 100% !important;
-        height: 100dvh !important; 
-        top: 0 !important;
-        left: 0 !important;
-        right: 0 !important;
-        bottom: 0 !important;
-    }
-    
-    .nav-links a {
-        font-size: 1.4rem !important; /* Slightly smaller to ensure they all fit vertically */
-        padding: 1.2rem !important;
-    }
-
-    /* --- FIX 2: Prevent Shop Grid from Causing Horizontal Scroll --- */
-    body {
-        overflow-x: hidden !important;
-        max-width: 100% !important;
-    }
-    
-    .shop-content {
-        max-width: 100% !important;
-        overflow: hidden !important; 
-        box-sizing: border-box !important;
-    }
-    
-    .shop-grid {
-        max-width: 100% !important;
-        overflow: hidden !important; 
-        /* Safe column division */
-        grid-template-columns: repeat(2, minmax(0, 1fr)) !important; 
-    }
-
-    /* --- FIX 3: Make 2-Column Card Text Safely Smaller --- */
-    /* This prevents long words in Arabic or English from pushing the card width out */
-    .shop-card h3, html[dir="rtl"] .shop-card h3 {
-        font-size: 0.95rem !important; /* Scaled down for safety */
-        line-height: 1.3 !important;
-    }
-    
-    .shop-card p, html[dir="rtl"] .shop-card p {
-        font-size: 0.7rem !important; /* Scaled down for safety */
-    }
-    
-    .price, html[dir="rtl"] .price {
-        font-size: 1rem !important;
-    }
-    
-    .add-btn, html[dir="rtl"] .add-btn {
-        font-size: 0.75rem !important;
-        min-height: 40px !important;
-    }
-}
-
-/* ==========================================================
-   EXPERT FRONTEND FIX: PERFECT ALIGNMENT & EQUAL HEIGHTS
-========================================================== */
-@media (max-width: 768px) {
-    /* 1. The Container (Equal Width) */
+    /* 4. The 2-Column Equal Grid */
     .shop-grid {
         display: grid !important;
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 16px !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 12px !important;
         width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 0 4rem 0 !important;
+        margin: 0 !important;
+        box-sizing: border-box !important;
+        overflow: hidden !important;
     }
 
-    /* 2. The Card (Equal Height & Flexbox) */
+    /* 5. The Card (Equal Height & Flexbox Column) */
     .shop-card {
         display: flex !important;
         flex-direction: column !important;
-        height: 100% !important; /* Stretches to fill the grid row */
+        height: 100% !important; /* Stretches to fill equal grid row height */
         box-sizing: border-box !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 1.1rem 0.75rem !important;
+        border-radius: 14px !important;
+        text-align: left !important;
+        align-items: flex-start !important;
+        overflow: hidden !important;
+        word-wrap: normal !important;
+        overflow-wrap: normal !important;
+        hyphens: none !important;
     }
 
-    /* 3. Text Truncation (Keep cards uniform) */
-    .shop-card p, html[dir="rtl"] .shop-card p {
+    html[dir="rtl"] .shop-card {
+        text-align: right !important;
+        align-items: flex-end !important;
+    }
+
+    /* Card Icon */
+    .shop-icon {
+        font-size: 1.4rem !important;
+        color: #b8957a !important;
+        margin-bottom: 0.5rem !important;
+        width: auto !important;
+        height: auto !important;
+        background: none !important;
+        border: none !important;
+        display: block !important;
+    }
+
+    /* Card Title */
+    .shop-card h3,
+    html[dir="rtl"] .shop-card h3 {
+        font-size: 0.98rem !important;
+        font-weight: 700 !important;
+        line-height: 1.25 !important;
+        color: #ffffff !important;
+        margin: 0 0 0.4rem 0 !important;
+        text-wrap: balance !important;
+    }
+
+    /* Card Description (Clamped to 3 lines for clean consistency) */
+    .shop-card p,
+    html[dir="rtl"] .shop-card p {
+        font-size: 0.72rem !important;
+        line-height: 1.4 !important;
+        color: rgba(255, 255, 255, 0.85) !important;
+        margin: 0 0 0.8rem 0 !important;
         display: -webkit-box !important;
         -webkit-line-clamp: 3 !important;
         -webkit-box-orient: vertical !important;
@@ -4022,23 +3561,43 @@ html {
         text-overflow: ellipsis !important;
     }
 
-    /* 4. The Button & Price (Push to Bottom) */
-    /* By putting margin-top: auto on the price, it pushes BOTH the price and button perfectly to the bottom */
-    .price, html[dir="rtl"] .price {
-        margin-top: auto !important; 
-        margin-bottom: 0.6rem !important;
+    /* 6. Price & Add-to-Cart Button (Pushed Perfectly to Bottom) */
+    .price,
+    html[dir="rtl"] .price {
+        margin-top: auto !important; /* PUSHES PRICE AND BUTTON TO BOTTOM */
+        margin-bottom: 0.5rem !important;
+        font-size: 1.05rem !important;
+        font-weight: 700 !important;
+        color: #b8957a !important;
         width: 100% !important;
+        display: block !important;
     }
 
-    .add-btn, html[dir="rtl"] .add-btn {
+    .add-btn,
+    html[dir="rtl"] .add-btn {
         width: 100% !important;
-        margin-top: 0 !important;
+        min-height: 42px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        font-size: 0.78rem !important;
+        font-weight: 600 !important;
+        padding: 0 0.5rem !important;
+        border-radius: 8px !important;
+        white-space: nowrap !important;
+        margin: 0 !important;
+        cursor: pointer !important;
+        box-sizing: border-box !important;
     }
 }
 
-/* 5. Small Screen Fallback */
+/* ==========================================================
+   EXTRA SMALL SCREEN FALLBACK (< 360px)
+========================================================== */
 @media (max-width: 360px) {
     .shop-grid {
         grid-template-columns: 1fr !important;
+        gap: 14px !important;
     }
 }
+
