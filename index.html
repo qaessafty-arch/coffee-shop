@@ -5,16 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ODOR — Premium Coffee</title>
 
-    <!-- Google Fonts -->
+    <!-- Google Fonts: Luxury Editorial Serif & Modern Geometric Grotesque -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&family=Dancing+Script:wght@400;700&family=Tajawal:wght@300;400;500;700&family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Readex+Pro:wght@300;400;500;600;700&family=Tajawal:wght@400;500;700&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
     <!-- Link to the separate CSS file -->
-    <link rel="stylesheet" href="style.css?v=13" />
+    <link rel="stylesheet" href="style.css?v=14" />
 </head>
 <body>
 
@@ -74,7 +74,8 @@
     <div class="content-wrapper" id="home">
         <div class="main-content">
             <div class="left-content">
-                <h1 class="headline" data-i18n-html="hero_title">Discover <br />the real taste of coffe with <span class="highlight">ODOR</span></h1>
+                <div class="hero-badge"><i class="fas fa-certificate"></i> <span data-i18n="hero_badge">EST. ERBIL • ARTISAN SPECIALTY ROASTERY</span></div>
+                <h1 class="headline" data-i18n-html="hero_title">Discover <br />the real taste of coffee with <span class="highlight">ODOR</span></h1>
                 <p class="sub-headline" data-i18n="hero_sub">Hand-picked single-origin beans, meticulously roasted and brewed.</p>
                 <p class="description" data-i18n-html="hero_desc">At ODOR, whether you're looking for a bold espresso or a smooth pour-over, we have it all.<br />Timeless roasting meets contemporary flavor — designed for those who dare to savor.</p>
                 <a href="#shop" class="cta-button" data-i18n="hero_cta">Explore Our Brews</a>
@@ -714,7 +715,8 @@
         const TRANSLATIONS = {
             en: {
                 nav_home: "Home", nav_shop: "Shop", nav_blog: "Blog", nav_about: "About", nav_contact: "Contact",
-                hero_title: 'Discover <br />the real taste of coffe with <span class="highlight">ODOR</span>',
+                hero_badge: "EST. ERBIL • ARTISAN SPECIALTY ROASTERY",
+                hero_title: 'Discover <br />the real taste of coffee with <span class="highlight">ODOR</span>',
                 hero_sub: "Hand-picked single-origin beans, meticulously roasted and brewed.",
                 hero_desc: "At ODOR, whether you're looking for a bold espresso or a smooth pour-over, we have it all.<br />Timeless roasting meets contemporary flavor — designed for those who dare to savor.",
                 hero_cta: "Explore Our Brews",
@@ -769,6 +771,7 @@
             },
             ar: {
                 nav_home: "الرئيسية", nav_shop: "المتجر", nav_blog: "المدونة", nav_about: "من نحن", nav_contact: "اتصل بنا",
+                hero_badge: "أربيل • محمصة القهوة المختصة",
                 hero_title: 'اكتشف <br />الطعم الحقيقي للقهوة مع <span class="highlight">ODOR</span>',
                 hero_sub: "حبوب مختارة يدويًا من أصل واحد، محمّصة ومُخمّرة بعناية فائقة.",
                 hero_desc: "في ODOR، سواء كنت تبحث عن إسبريسو قوي أو قهوة مقطرة ناعمة، لدينا كل ما تحتاجه.<br />تحميص خالد يلتقي بالنكهة العصرية — مصمم لأولئك الذين يجرؤون على التذوق.",
@@ -824,6 +827,7 @@
             },
             ku: {
                 nav_home: "سەرەکی", nav_shop: "فرۆشگا", nav_blog: "بلۆگ", nav_about: "دەربارەی ئێمە", nav_contact: "پەیوەندی",
+                hero_badge: "هەولێر • قاوەخانەی تایبەتی ئۆدۆر",
                 hero_title: 'تامە ڕاستەقینەکەی قاوە <br />بدۆزەرەوە لەگەڵ <span class="highlight">ODOR</span>',
                 hero_sub: "دانەکانی هەڵبژێردراوی دەستکرد لە سەرچاوەیەک، بە وردی برژاو و ئامادەکراو.",
                 hero_desc: "لە ODOR، ئەگەر بەدوای ئیسپرێسۆی بەهێز یان قاوەی نەرمدا بگەڕێی، هەموویمان هەیە.<br />برژاندنی هەمیشەیی لەگەڵ تامی هاوچەرخ — بۆ ئەوانەی کە دەوێرن تام بکەن.",
