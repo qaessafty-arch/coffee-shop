@@ -3992,3 +3992,53 @@ html {
         min-height: 40px !important;
     }
 }
+
+/* ==========================================================
+   EXPERT FRONTEND FIX: PERFECT ALIGNMENT & EQUAL HEIGHTS
+========================================================== */
+@media (max-width: 768px) {
+    /* 1. The Container (Equal Width) */
+    .shop-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 16px !important;
+        width: 100% !important;
+    }
+
+    /* 2. The Card (Equal Height & Flexbox) */
+    .shop-card {
+        display: flex !important;
+        flex-direction: column !important;
+        height: 100% !important; /* Stretches to fill the grid row */
+        box-sizing: border-box !important;
+    }
+
+    /* 3. Text Truncation (Keep cards uniform) */
+    .shop-card p, html[dir="rtl"] .shop-card p {
+        display: -webkit-box !important;
+        -webkit-line-clamp: 3 !important;
+        -webkit-box-orient: vertical !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+    }
+
+    /* 4. The Button & Price (Push to Bottom) */
+    /* By putting margin-top: auto on the price, it pushes BOTH the price and button perfectly to the bottom */
+    .price, html[dir="rtl"] .price {
+        margin-top: auto !important; 
+        margin-bottom: 0.6rem !important;
+        width: 100% !important;
+    }
+
+    .add-btn, html[dir="rtl"] .add-btn {
+        width: 100% !important;
+        margin-top: 0 !important;
+    }
+}
+
+/* 5. Small Screen Fallback */
+@media (max-width: 360px) {
+    .shop-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
