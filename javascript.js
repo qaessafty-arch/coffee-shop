@@ -1,157 +1,116 @@
-// ─── PARALLAX SCROLL ───
-(function() {
+/* ODOR Coffee — progressive enhancement and interaction helpers. */
+(() => {
+    'use strict';
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // ─── PARALLAX SCROLL ───
     const wrapper = document.querySelector('.plx-wrapper');
-    const bg      = document.querySelector('.plx-bg');
+    const background = document.querySelector('.plx-bg');
     const content = document.querySelector('.plx-content');
-    const hint    = document.querySelector('.plx-scroll-hint');
+    const hint = document.querySelector('.plx-scroll-hint');
 
-    if (!wrapper) return;
+    if (wrapper && !prefersReducedMotion) {
+        let frameRequested = false;
 
-    function updateParallax() {
-        const rect = wrapper.getBoundingClientRect();
-        const maxScroll = wrapper.offsetHeight - window.innerHeight;
-        const scrolled = -rect.top;
+        const updateParallax = () => {
+            const maxScroll = Math.max(1, wrapper.offsetHeight - window.innerHeight);
+            const scrolled = -wrapper.getBoundingClientRect().top;
+            const progress = Math.max(0, Math.min(1, scrolled / maxScroll));
 
-        if (scrolled < -window.innerHeight || scrolled > maxScroll + window.innerHeight) return;
+            if (background) background.style.transform = `translateY(${progress * 20}%)`;
+            if (content) {
+                content.style.transform = `translateX(-50%) translateY(${-progress * 100}px)`;
+                content.style.opacity = String(1 - progress * 0.9);
+            }
+            if (hint) hint.style.opacity = String(Math.max(0, 1 - progress * 3));
+            frameRequested = false;
+        };
 
-        const progress = Math.max(0, Math.min(1, scrolled / maxScroll));
+        const requestParallaxUpdate = () => {
+            if (frameRequested) return;
+            frameRequested = true;
+            window.requestAnimationFrame(updateParallax);
+        };
 
-        // Background slides down (parallax drift, no zoom)
-        if (bg) {
-            const y = progress * 20;   // % of movement — tweak to taste
-            bg.style.transform = `translateY(${y}%)`;
-        }
-
-        // Text drifts up and fades
-        if (content) {
-            content.style.transform = `translateX(-50%) translateY(${-progress * 100}px)`;
-            content.style.opacity   = (1 - progress * 0.9).toFixed(2);
-        }
-
-        // Hide scroll hint after user starts scrolling
-        if (hint) {
-            hint.style.opacity = Math.max(0, 1 - progress * 3).toFixed(2);
-        }
+        window.addEventListener('scroll', requestParallaxUpdate, { passive: true });
+        window.addEventListener('resize', requestParallaxUpdate, { passive: true });
+        updateParallax();
     }
 
-    let ticking = false;
-    window.addEventListener('scroll', () => {
-        if (!ticking) {
-            window.requestAnimationFrame(() => {
-                updateParallax();
-                ticking = false;
+    // ─── PARALLAX IMAGE CAROUSEL ───
+    const leftButton = document.querySelector('.plx-arrow-left');
+    const rightButton = document.querySelector('.plx-arrow-right');
+    const items = [...document.querySelectorAll('.plx-item')];
+
+    if (leftButton && rightButton && items.length) {
+        let animating = false;
+        const transitionDuration = prefersReducedMotion ? 0 : 950;
+
+        const rotate = (direction) => {
+            if (animating) return;
+            animating = true;
+
+            items.forEach((item) => {
+                const nextClass = direction === 'next'
+                    ? { 'pos-right': 'pos-center', 'pos-center': 'pos-left', 'pos-left': 'pos-right' }
+                    : { 'pos-left': 'pos-center', 'pos-center': 'pos-right', 'pos-right': 'pos-left' };
+
+                const currentPosition = Object.keys(nextClass).find((position) => item.classList.contains(position));
+                if (currentPosition) item.classList.replace(currentPosition, nextClass[currentPosition]);
             });
-            ticking = true;
-        }
-    });
 
-    window.addEventListener('resize', updateParallax);
-    updateParallax();
-})();
+            window.setTimeout(() => { animating = false; }, transitionDuration);
+        };
 
-// ─── IMAGE CAROUSEL ───
-(function() {
-    const leftBtn  = document.querySelector('.plx-arrow-left');
-    const rightBtn = document.querySelector('.plx-arrow-right');
-    const items    = document.querySelectorAll('.plx-item');
-
-    if (!leftBtn || !rightBtn || !items.length) return;
-
-    let animating = false;
-
-    function rotate(direction) {
-        if (animating) return;
-        animating = true;
-
-        items.forEach(item => {
-            if (direction === 'next') {
-                // Right arrow: right→center, center→left, left→right
-                if (item.classList.contains('pos-right')) {
-                    item.classList.replace('pos-right', 'pos-center');
-                } else if (item.classList.contains('pos-center')) {
-                    item.classList.replace('pos-center', 'pos-left');
-                } else if (item.classList.contains('pos-left')) {
-                    item.classList.replace('pos-left', 'pos-right');
-                }
-            } else {
-                // Left arrow: left→center, center→right, right→left
-                if (item.classList.contains('pos-left')) {
-                    item.classList.replace('pos-left', 'pos-center');
-                } else if (item.classList.contains('pos-center')) {
-                    item.classList.replace('pos-center', 'pos-right');
-                } else if (item.classList.contains('pos-right')) {
-                    item.classList.replace('pos-right', 'pos-left');
-                }
-            }
-        });
-
-        // release the lock after transition ends
-        setTimeout(() => { animating = false; }, 950);
+        leftButton.addEventListener('click', () => rotate('previous'));
+        rightButton.addEventListener('click', () => rotate('next'));
     }
 
-    leftBtn.addEventListener('click', () => rotate('prev'));
-    rightBtn.addEventListener('click', () => rotate('next'));
-})();
+    // ─── CART FEEDBACK ───
+    const addButtons = document.querySelectorAll('.add-btn');
+    if (addButtons.length) {
+        const toast = document.createElement('div');
+        toast.className = 'ui-toast';
+        toast.setAttribute('role', 'status');
+        toast.setAttribute('aria-live', 'polite');
+        toast.innerHTML = '<i class="fas fa-check-circle" aria-hidden="true"></i> <span></span>';
+        document.body.appendChild(toast);
 
+        let toastTimeout;
+        const showToast = (message) => {
+            toast.querySelector('span').textContent = message;
+            toast.classList.add('show');
+            window.clearTimeout(toastTimeout);
+            toastTimeout = window.setTimeout(() => toast.classList.remove('show'), 3000);
+        };
 
+        addButtons.forEach((button) => {
+            button.addEventListener('click', (event) => {
+                event.preventDefault();
+                const card = button.closest('.shop-card');
+                const name = card?.querySelector('h3')?.textContent.trim() || 'Item';
 
-
-
-// ─── ADVANCED UI/UX & BUTTON FUNCTIONALITY ───
-(function() {
-    // 1. Setup Toast Notification System
-    const toast = document.createElement('div');
-    toast.className = 'ui-toast';
-    toast.innerHTML = '<i class="fas fa-check-circle"></i> <span>Item added to cart!</span>';
-    document.body.appendChild(toast);
-
-    let toastTimeout;
-    function showToast(message) {
-        toast.querySelector('span').innerText = message;
-        toast.classList.add('show');
-        clearTimeout(toastTimeout);
-        toastTimeout = setTimeout(() => {
-            toast.classList.remove('show');
-        }, 3000);
+                button.classList.add('is-pressed');
+                window.setTimeout(() => button.classList.remove('is-pressed'), 150);
+                showToast(`${name} added to cart!`);
+            });
+        });
     }
 
-    // 2. Make "Add to Cart" buttons workable
-    const addBtns = document.querySelectorAll('.add-btn');
-    addBtns.forEach(btn => {
-        btn.addEventListener('click', function(e) {
-            e.preventDefault(); // Stop page from jumping to top
-            
-            // Add a quick click animation
-            this.style.transform = 'scale(0.95)';
-            setTimeout(() => {
-                this.style.transform = '';
-            }, 150);
+    // ─── ACCESSIBLE SMOOTH ANCHOR SCROLLING ───
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener('click', (event) => {
+            const targetId = anchor.getAttribute('href');
+            if (!targetId || targetId === '#') return;
 
-            // Get product name if possible, otherwise generic
-            const card = this.closest('.shop-card');
-            let itemName = "Item";
-            if (card) {
-                const titleEl = card.querySelector('h3');
-                if (titleEl) itemName = titleEl.innerText;
-            }
-            
-            showToast(itemName + ' added to cart!');
+            const target = document.querySelector(targetId);
+            if (!target) return;
+
+            event.preventDefault();
+            target.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth', block: 'start' });
+            if (!target.hasAttribute('tabindex')) target.setAttribute('tabindex', '-1');
+            target.focus({ preventScroll: true });
         });
     });
-
-    // 3. Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return; // Skip empty anchors
-            
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                e.preventDefault();
-                targetElement.scrollIntoView({
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-});
+})();
