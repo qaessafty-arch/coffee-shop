@@ -1,0 +1,148 @@
+/* Mobile navigation improvements for ODOR coffee shop */
+
+@media (max-width: 767px) {
+  body.menu-open {
+    overflow: hidden;
+  }
+
+  .navbar {
+    padding: 0.75rem 1rem;
+    min-height: 64px;
+  }
+
+  .logo {
+    font-size: 1.35rem;
+    letter-spacing: 0.08em;
+  }
+
+  .logo .icon-letter {
+    font-size: 1.7rem;
+  }
+
+  .nav-icons {
+    gap: 0.45rem;
+  }
+
+  .nav-icons > .nav-icon:not(.lang-trigger) {
+    display: none;
+  }
+
+  .nav-icon,
+  .mobile-menu-btn {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+  }
+
+  .mobile-menu-btn {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(212, 163, 115, 0.35);
+    background: rgba(212, 163, 115, 0.12);
+    color: #e5b98f;
+    font-size: 1.2rem;
+    line-height: 1;
+    transition: background 0.2s ease, transform 0.2s ease;
+    z-index: 9999;
+  }
+
+  .mobile-menu-btn:hover,
+  .mobile-menu-btn:focus-visible {
+    background: rgba(212, 163, 115, 0.2);
+    transform: translateY(-1px);
+    outline: none;
+  }
+
+  .nav-links {
+    display: flex !important;
+    position: fixed !important;
+    top: 64px !important;
+    left: 12px !important;
+    right: 12px !important;
+    width: auto !important;
+    max-height: calc(100dvh - 90px) !important;
+    overflow-y: auto !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    align-items: stretch !important;
+    gap: 0.25rem !important;
+    padding: 0.7rem !important;
+    margin: 0 !important;
+    border: 1px solid rgba(212, 163, 115, 0.25);
+    border-radius: 18px;
+    background: rgba(18, 12, 9, 0.98);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    box-shadow: 0 28px 60px rgba(0, 0, 0, 0.5);
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    transform: translateY(-10px) scale(0.98);
+    transform-origin: top center;
+    transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s ease;
+    z-index: 9998;
+  }
+
+  .nav-links.open {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transform: translateY(0) scale(1);
+  }
+
+  .nav-links li {
+    width: 100%;
+    list-style: none;
+  }
+
+  .nav-links a {
+    display: flex;
+    align-items: center;
+    min-height: 52px;
+    width: 100%;
+    padding: 0.85rem 1rem;
+    border-radius: 12px;
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-text-bright);
+    text-shadow: none;
+    text-align: left;
+  }
+
+  .nav-links a:hover,
+  .nav-links a:focus-visible {
+    background: rgba(212, 163, 115, 0.12);
+    color: var(--color-gold-hover);
+    outline: none;
+  }
+
+  .nav-links a::after {
+    display: none;
+  }
+
+  .lang-dropdown {
+    position: static;
+  }
+
+  .lang-menu {
+    right: 0;
+    top: calc(100% + 10px);
+  }
+}
+
+@media (max-width: 420px) {
+  .nav-links {
+    left: 10px;
+    right: 10px;
+    top: 60px;
+  }
+
+  .nav-links a {
+    font-size: 0.82rem;
+    letter-spacing: 0.1em;
+  }
+}
