@@ -4,6 +4,95 @@
 
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+    // Keep the coffee menu at two columns on mobile and responsive on larger screens.
+    const menuResponsiveStyles = document.createElement('style');
+    menuResponsiveStyles.textContent = `
+        .shop-grid {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        @media (max-width: 1024px) {
+            .shop-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 1.25rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .shop-section {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+
+            .shop-content {
+                padding-left: 0;
+                padding-right: 0;
+            }
+
+            .shop-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: .85rem;
+            }
+
+            .shop-card {
+                min-width: 0;
+                padding: 1.35rem .8rem;
+                border-radius: 14px;
+            }
+
+            .shop-icon {
+                width: 52px;
+                height: 52px;
+                font-size: 1.45rem;
+                margin-bottom: .75rem;
+            }
+
+            .shop-card h3 {
+                font-size: 1.15rem;
+                line-height: 1.2;
+            }
+
+            .shop-card p {
+                font-size: .82rem;
+                line-height: 1.45;
+                margin-bottom: 1rem;
+            }
+
+            .price {
+                font-size: 1.2rem;
+                margin-bottom: .75rem;
+            }
+
+            .add-btn {
+                width: 100%;
+                min-height: 42px;
+                padding: .65rem .35rem;
+                font-size: .68rem;
+                letter-spacing: .04em;
+            }
+
+            .shop-header-sub {
+                margin-top: 3.5rem;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .shop-grid { gap: .6rem; }
+            .shop-card { padding-left: .55rem; padding-right: .55rem; }
+            .shop-card h3 { font-size: 1rem; }
+            .shop-card p { font-size: .75rem; }
+            .add-btn { font-size: .61rem; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .shop-card, .shop-icon, .add-btn {
+                animation: none;
+                transition: none;
+            }
+        }
+    `;
+    document.head.appendChild(menuResponsiveStyles);
+
     // ─── PARALLAX SCROLL ───
     const wrapper = document.querySelector('.plx-wrapper');
     const background = document.querySelector('.plx-bg');
@@ -123,7 +212,6 @@
         const mobileQuery = window.matchMedia('(max-width: 768px)');
         let isOpen = false;
 
-        // Keep the menu state and the responsive breakpoint in sync.
         const setMenuState = (open) => {
             isOpen = open && mobileQuery.matches;
             links.classList.toggle('open', isOpen);
