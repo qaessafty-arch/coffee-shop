@@ -18,15 +18,15 @@
       line-height: 1.02 !important;
       letter-spacing: .012em !important;
       text-transform: uppercase;
-      color: #fffaf4 !important;
+      color: #f7f1e8 !important;
       text-shadow: 0 5px 24px rgba(0, 0, 0, .72) !important;
     }
 
     .headline .highlight {
       font-family: 'Anton', Impact, sans-serif !important;
       font-style: normal !important;
-      color: #e7b27f !important;
-      background: linear-gradient(110deg, #ffe0b8 0%, #e7b27f 48%, #b87545 100%);
+      color: #c99a5e !important;
+      background: linear-gradient(110deg, #eed4b0 0%, #c99a5e 48%, #a07038 100%);
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -35,22 +35,22 @@
     }
 
     .hero-badge {
-      color: #f0c392 !important;
+      color: #dba870 !important;
       background: rgba(231, 178, 127, .13) !important;
       border-color: rgba(231, 178, 127, .4) !important;
     }
 
     .sub-headline {
-      color: #f1c79d !important;
+      color: #d4be95 !important;
     }
 
     .cta-button {
-      background: linear-gradient(135deg, #efbd87, #b87545) !important;
+      background: linear-gradient(135deg, #d4a56e, #a07038) !important;
       box-shadow: 0 10px 28px rgba(184, 117, 69, .32), 0 4px 14px rgba(0, 0, 0, .45) !important;
     }
 
     .cta-button:hover {
-      background: linear-gradient(135deg, #ffe0b8, #d99a68) !important;
+      background: linear-gradient(135deg, #eed4b0, #bb8855) !important;
     }
 
     @media (max-width: 768px) {

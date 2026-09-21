@@ -38,9 +38,9 @@
     display: inline-flex !important;
     align-items: center;
     justify-content: center;
-    border: 1px solid rgba(212, 163, 115, 0.35);
-    background: rgba(212, 163, 115, 0.12);
-    color: #e5b98f;
+    border: 1px solid rgba(201, 154, 94, 0.38);
+    background: rgba(201, 154, 94, 0.14);
+    color: #e0b483;
     font-size: 1.2rem;
     line-height: 1;
     transition: background 0.2s ease, transform 0.2s ease;
@@ -49,7 +49,7 @@
 
   .mobile-menu-btn:hover,
   .mobile-menu-btn:focus-visible {
-    background: rgba(212, 163, 115, 0.2);
+    background: rgba(201, 154, 94, 0.22);
     transform: translateY(-1px);
     outline: none;
   }
@@ -67,12 +67,12 @@
     gap: 0.5rem !important;
     padding: 0.75rem !important;
     margin: 0 !important;
-    border: 1px solid rgba(212, 163, 115, 0.25);
+    border: 1px solid rgba(201, 154, 94, 0.28);
     border-radius: 18px;
-    background: rgba(18, 12, 9, 0.98);
+    background: rgba(20, 14, 10, 0.98);
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
-    box-shadow: 0 28px 60px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 28px 60px rgba(0, 0, 0, 0.55);
     opacity: 0 !important;
     visibility: hidden !important;
     pointer-events: none !important;
@@ -113,7 +113,7 @@
 
   .nav-links a:hover,
   .nav-links a:focus-visible {
-    background: rgba(212, 163, 115, 0.12);
+    background: rgba(201, 154, 94, 0.14);
     color: var(--color-gold-hover);
     outline: none;
   }
