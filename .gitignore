@@ -23,5 +23,8 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+# Build outputs
+dist/
+
 # Large video files (exceeds GitHub 25MB limit)
 Video Project 3.mp4

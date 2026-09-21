@@ -1,0 +1,14 @@
+{
+  "name": "odor-coffee",
+  "version": "1.0.0",
+  "description": "ODOR — Premium Coffee website and online showcase",
+  "type": "module",
+  "scripts": {
+    "dev": "node server.js",
+    "build": "node build.js",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

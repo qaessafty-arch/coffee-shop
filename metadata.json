@@ -1,0 +1,8 @@
+{
+  "name": "ODOR — Premium Coffee",
+  "description": "Artisan specialty roastery and cafe in Erbil featuring single-origin coffees, handcrafted brews, and multilingual support.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
