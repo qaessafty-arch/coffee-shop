@@ -1,33 +1,64 @@
 (() => {
   'use strict';
 
-  // Load the requested display font and apply it to the hero headline.
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Load the display font once and keep the hero styling consistent with the coffee palette.
   const heroFont = document.createElement('link');
   heroFont.rel = 'stylesheet';
   heroFont.href = 'https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:wght@400;500;600;700&display=swap';
   document.head.appendChild(heroFont);
 
-  const heroFontStyles = document.createElement('style');
-  heroFontStyles.textContent = `
+  const themeStyles = document.createElement('style');
+  themeStyles.textContent = `
     .headline {
       font-family: 'Anton', Impact, sans-serif !important;
       font-weight: 400 !important;
-      letter-spacing: .015em !important;
-      line-height: 1.04 !important;
+      font-size: clamp(2.6rem, 5.5vw, 5.4rem) !important;
+      line-height: 1.02 !important;
+      letter-spacing: .012em !important;
       text-transform: uppercase;
+      color: #fffaf4 !important;
+      text-shadow: 0 5px 24px rgba(0, 0, 0, .72) !important;
     }
+
     .headline .highlight {
       font-family: 'Anton', Impact, sans-serif !important;
       font-style: normal !important;
-      letter-spacing: .02em !important;
+      color: #e7b27f !important;
+      background: linear-gradient(110deg, #ffe0b8 0%, #e7b27f 48%, #b87545 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: .025em !important;
+      filter: drop-shadow(0 3px 10px rgba(190, 118, 64, .32));
     }
+
+    .hero-badge {
+      color: #f0c392 !important;
+      background: rgba(231, 178, 127, .13) !important;
+      border-color: rgba(231, 178, 127, .4) !important;
+    }
+
+    .sub-headline {
+      color: #f1c79d !important;
+    }
+
+    .cta-button {
+      background: linear-gradient(135deg, #efbd87, #b87545) !important;
+      box-shadow: 0 10px 28px rgba(184, 117, 69, .32), 0 4px 14px rgba(0, 0, 0, .45) !important;
+    }
+
+    .cta-button:hover {
+      background: linear-gradient(135deg, #ffe0b8, #d99a68) !important;
+    }
+
     @media (max-width: 768px) {
-      .headline { font-size: clamp(2.35rem, 12vw, 4.2rem) !important; }
+      .headline { font-size: clamp(2.35rem, 12vw, 4.5rem) !important; }
+      .headline .highlight { letter-spacing: .02em !important; }
     }
   `;
-  document.head.appendChild(heroFontStyles);
-
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.head.appendChild(themeStyles);
 
   const wrapper = document.querySelector('.plx-wrapper');
   const background = document.querySelector('.plx-bg');
